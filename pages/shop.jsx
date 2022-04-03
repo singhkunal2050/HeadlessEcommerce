@@ -14,7 +14,7 @@ function shop({ products }) {
         <div className="products">
           {products.map((product) => {
             return (
-              <ProductSingle product={product} />
+              <ProductSingle key={product.id} product={product} />
             );
           })}
         </div>
