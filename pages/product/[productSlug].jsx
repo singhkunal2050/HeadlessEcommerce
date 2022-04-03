@@ -1,14 +1,14 @@
 import ProductButton from "../../components/ProductButton";
 import { client } from "../../utils/ShopifyClient";
 
-function Product({ product }) {
+function Product({ key, product }) {
   return (
     <main>
       <div className="container">
-        <section className="product-single">
+        <section data-id={key}  className="product-single">
           <div className="product-images">
             {product.images.map((img) => {
-              return <img src={img.src} height="400px" width="400px" />;
+              return <img key={img.src}  src={img.src} height="400px" width="400px" />;
             })}
           </div>
           <div className="product-description">

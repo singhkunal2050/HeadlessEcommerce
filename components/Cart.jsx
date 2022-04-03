@@ -29,7 +29,7 @@ function Cart() {
             {cart.items.length>0 && <CheckoutButton/>}
             {cart.items.map(item=>{
               return(
-                <div className="cart-item">
+                <div key={item.variantId} className="cart-item">
                   <div className="cart-item-img">
                     <Image src={item.customAttributes[2].value} alt={item.customAttributes[0].value}  width="150px" height="150px" />
                   </div>
