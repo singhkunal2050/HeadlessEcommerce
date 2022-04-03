@@ -3,7 +3,7 @@ import { client } from "../utils/ShopifyClient";
 import { useContext } from "react";
 import { ProductContext } from "../context/productsContext";
 
-function shop({ products }) {
+function Shop({ products }) {
 
   const { productsGlobal , setProductsGlobal } = useContext(ProductContext);
   setProductsGlobal(products);
@@ -23,7 +23,7 @@ function shop({ products }) {
   );
 }
 
-export default shop;
+export default Shop;
 
 export async function getStaticProps(context) {
   //   console.log(context)
