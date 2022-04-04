@@ -7,12 +7,12 @@ function CheckoutButton() {
   const { cart } = useContext(CartContext);
   function checkout() {
     let checkOut = fetch("/api/createCheckout");
-    let webUrl = fetch("api/createwebUrl?")
-    client.checkout.addLineItems(checkOut.id, cart.items).then((checkout) => {
-      console.log(checkout.lineItems);
-      console.log("Items added to checkout object ");
-      window.location(checkout.webUrl, "_blank");
-    });
+    let checkout = await client.checkout.addLineItems(checkOut.id, cart.items)
+    // .then((checkout) => {
+    //   console.log(checkout.lineItems);
+    //   console.log("Items added to checkout object ");
+    //   window.location(checkout.webUrl, "_blank");
+    // });
   }
 
   return (
