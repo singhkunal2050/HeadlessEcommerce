@@ -10,15 +10,6 @@ function CheckoutButton() {
 
   useEffect(() => {
     async function foo() {
-      // let response = await fetch('/api/createCheckout')
-      // let checkout = await response.json();
-      // let checkoutId = checkout.id
-      // checkout = await fetch('/api/createCheckout')
-      // fetch(`https://jsonplaceholder.typicode.com/todos/${parseInt(Math.random()*50)}`)
-      // .then(response => response.json())
-      // .then(json => console.log(json))
-
-      console.log(client);
       let checkout = await client.checkout.create();
       checkout = await client.checkout.addLineItems(checkout.id, cart.items);
       window.open(checkout.webUrl, "_blank");
