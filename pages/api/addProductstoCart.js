@@ -2,8 +2,7 @@
 import { client } from "../../utils/ShopifyClient";
 
 export default function handler(req, res) {
-    client.checkout.create().then((checkout) => {
-        res.status(200).json({checkout})
-    });
-  }
-  
+  // client.checkout.addLineItems(req.checkoutId, cart.items).then((checkout) => {
+  //   res.status(200).json({ checkout });
+  // });
+}

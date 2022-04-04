@@ -12,7 +12,11 @@ function Navbar() {
       <div className="container">
         <div className="nav-wrapper">
           <div className="navbar-logo">
-            <h2>Headless Ecommerce</h2>
+          <Link href="/"> 
+            <a>
+              <h2>Headless Ecommerce</h2>
+            </a>
+          </Link>
           </div>
           <div className="navbar-menu">
             <Link href="/">
