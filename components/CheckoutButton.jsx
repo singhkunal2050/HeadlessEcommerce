@@ -5,21 +5,20 @@ import { client } from "../utils/ShopifyClient";
 import { useState, useEffect } from "react";
 
 function CheckoutButton() {
-  const [checkoutState, setCheckoutState] = useState(false);
   const { cart } = useContext(CartContext);
 
-  useEffect(() => {
-    async function foo() {
+    async function createLinkandRedirect() {
+      console.log('creating link')
       let checkout = await client.checkout.create();
       checkout = await client.checkout.addLineItems(checkout.id, cart.items);
       window.open(checkout.webUrl, "_blank");
     }
-    foo();
-  }, [checkoutState]);
+
+
   return (
     <button
       className="check-out"
-      onClick={() => setCheckoutState(!checkoutState)}
+      onClick={createLinkandRedirect}
     >
       CheckoutButton
       <p>{checkoutState}</p>
