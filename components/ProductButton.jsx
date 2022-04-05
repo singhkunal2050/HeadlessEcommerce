@@ -63,7 +63,7 @@ function ProductButton({ productId }) {
   }
 
   return (
-    <div className="add-to-cart-wrapper">
+    <div className="add-to-cart-wrapper ">
       <div className="update-quantity-wrapper">
         <button
           data-operation="plus"

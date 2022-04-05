@@ -12,23 +12,33 @@ export default function Home() {
         <link rel="icon" href="/favicon.ico" />
       </Head>
 
-      <div className="hero container">
+      <div className="container mx-auto max-w-5xl">
+        <div className="hero grid grid-cols-1 md:grid-cols-2 place-items-center py-8">
           <div className="hero-text">
-            <h1>Shop All you Need at One Place!!</h1>
-            <p>
+            <h1 className="text-4xl font-bold my-2">
+              Shop All you Need at One Place!!
+            </h1>
+            <p className="text-xl text-gray-600 my-2">
               Lorem, ipsum dolor sit amet consectetur adipisicing elit. Sed
               eveniet natus fuga mollitia numquam adipisci quam reiciendis
               facilis non itaque.
             </p>
-            <Link href="/shop" >
-              <a className="cta cta-primary">Shop Now</a>
+            <Link href="/shop">
+              <a className="cta cta-primary bg-rose-700 text-white px-4 py-2 my-2">
+                Shop Now
+              </a>
             </Link>
           </div>
-          <div className="hero-image">
-            <Image src="https://source.unsplash.com/400x400?shop" alt="" height="500px" width="500px" />
+          <div className="hero-image flex justify-center">
+            <Image
+              src="https://source.unsplash.com/400x400?shop"
+              alt=""
+              height="500px"
+              width="500px"
+            />
           </div>
+        </div>
       </div>
-
     </main>
   );
 }

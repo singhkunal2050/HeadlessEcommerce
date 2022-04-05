@@ -1,3 +1,7 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
 html,
 body {
   padding: 0;
@@ -20,7 +24,10 @@ main {
   min-height: 80vh;
 }
 
+
 /* navbar */
+
+/*
 nav {
   background-color: #d4fff1;
   position: sticky;
@@ -50,7 +57,11 @@ nav {
   padding: 10px;
 }
 
+*/
+
 /* hero */
+
+/*
 
 .hero {
   display: flex;
@@ -82,7 +93,11 @@ nav {
   display: inline-block;
 }
 
+*/
+
 /* footer */
+
+/*
 
 footer {
   background: #d4fff1;
@@ -90,7 +105,11 @@ footer {
   text-align: center;
 }
 
+*/
+
 /* products */
+
+/*
 
 .products {
   display: grid;
@@ -123,8 +142,11 @@ footer {
   padding: 20px;
 }
 
+*/
+
 /* product single  */
 
+/*
 section.product-single {
   display: flex;
   gap: 10px;
@@ -180,7 +202,11 @@ button.update-quantity {
   border: 1px solid #ababab;
 }
 
+*/
+
 /* cart-container */
+
+/*
 
 .cart-floating-tag{
   background: #a6ffff;
@@ -218,5 +244,12 @@ button.update-quantity {
 
 
 .cart-item-details{
-  padding: 10px;
+  padd/*ing: 10px;
+}
+
+*/
+
+
+html,body{
+  /* overflow-x: hidden; */
 }

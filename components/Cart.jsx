@@ -11,12 +11,12 @@ function Cart() {
 
   return (
     <>
-
+      
         {/* <div className="cart-floating-tag">
           {JSON.stringify(cart)}
         </div> */}
 
-        <div className="cart-container" style={{ transform: cartVisibility ? 'translateX(0)' : 'translateX(110%)' }}>
+        <div className="cart-container transition-all duration-300 ease-in-out z-10 p-4 fixed inset-0 min-h-screen bg-white " style={{ transform: cartVisibility ? 'translateX(0)' : 'translateX(110%)' }}>
           <span className="close-cart"  onClick={()=>setCartVisibility(!cartVisibility)} >
             Close
           </span>
@@ -44,6 +44,7 @@ function Cart() {
             })}
         </div>
       </div>
+      
     </>
   );
 }
