@@ -10,8 +10,8 @@ function Shop({ products }) {
   // console.log(products);
   return (
     <main className="shop">
-      <div className="container">
-        <div className="products">
+      <div className="container mx-auto max-w-5xl">
+        <div className="products grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-2 py-8 px-2 md:px-20  ">
           {products.map((product) => {
             return (
               <ProductSingle key={product.id} product={product} />
