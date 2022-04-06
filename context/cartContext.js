@@ -7,10 +7,10 @@ export const CartProvider = (props) => {
   const cartStore = { cart, setCart, cartVisibility, setCartVisibility };
 
 
-  useEffect(()=>{
-    if(localStorage.cart!="")
-      setCart(JSON.parse(localStorage.cart))
-  },[])
+  // useEffect(()=>{
+  //   if(localStorage.cart!="")
+  //     setCart(JSON.parse(localStorage.cart))
+  // },[])
 
 
   return (
