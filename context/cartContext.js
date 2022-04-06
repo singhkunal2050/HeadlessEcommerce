@@ -8,6 +8,7 @@ export const CartProvider = (props) => {
 
 
   useEffect(()=>{
+    if(localStorage.cart!="")
       setCart(JSON.parse(localStorage.cart))
   },[cart])
 
