@@ -6,11 +6,6 @@ export const CartProvider = (props) => {
   const [cartVisibility, setCartVisibility] = useState(false);
   const cartStore = { cart, setCart, cartVisibility, setCartVisibility };
 
-
-  if(localStorage.cart!="")
-    setCart(JSON.parse(localStorage.cart))
-
-
   return (
     <CartContext.Provider value={cartStore}>
       {props.children}

@@ -53,6 +53,13 @@ function ProductButton({ productId }) {
     setQuantity(1);
   }
   
+  
+  useEffect(()=>{
+    if(localStorage.cart!="")
+      setCart(JSON.parse(localStorage.cart))
+  },[])
+
+
   function handleQuantityChange(e) {
     if (e.target.dataset.operation.includes("plus")) {
       setQuantity(quantity + 1);
