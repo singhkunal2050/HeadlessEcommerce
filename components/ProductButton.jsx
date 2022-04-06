@@ -46,12 +46,12 @@ function ProductButton({ productId }) {
       let combinedLineItems = Object.values(reducedArr);
       console.log(combinedLineItems);
       setCart( [...combinedLineItems] );
+      localStorage.cart = JSON.stringify([...combinedLineItems])
     }
     // alert("Product Added to Cart");
     console.log(cart);
     setQuantity(1);
   }
-
   
   function handleQuantityChange(e) {
     if (e.target.dataset.operation.includes("plus")) {
