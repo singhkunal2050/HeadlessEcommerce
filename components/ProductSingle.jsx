@@ -9,11 +9,12 @@ function ProductSingle({product}) {
         <Image
           src={product.images[0].src}
           alt={product.title}
-          width="600px"
-          height="600px"
+          className="object-cover"
+          width="700px"
+          height="500px"
         />
       </div>
-      <div className="product-info py-4 flex flex-col">
+      <div className="product-info py-4 px-2 flex flex-col">
         <Link href={"/product/" + product.handle}>
           <a className="text-xl font-bold pb-2">
             <h3>{product.title}</h3>
