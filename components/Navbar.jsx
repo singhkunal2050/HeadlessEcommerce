@@ -32,7 +32,7 @@ function Navbar() {
             </Link>
           </div>
 
-          <div className="cart-wrapper relative">
+          <div className="cart-wrapper relative mr-5">
             <button className="cart-toggle-btn" onClick={()=> setCartVisibility(!cartVisibility)} >
               <FiShoppingCart size={25} />
             </button>
