@@ -8,7 +8,7 @@
 - UI Top Notch
 https://github.com/dhruvangg/headless-shopify
 - pagination for products [numeric/lazy]
-
+https://next-auth.js.org/getting-started/example
 
 This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
 
