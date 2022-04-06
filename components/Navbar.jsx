@@ -12,7 +12,7 @@ function Navbar() {
     <>
     <nav className="bg-darknight  text-white sticky top-0 z-10  font-montserrat ">
       <div className="container max-w-5xl mx-auto">
-        <div className="nav-wrapper flex p-4 justify-between items-center">
+        <div className="nav-wrapper flex flex-wrap p-4 justify-center items-center">
           <div className="navbar-logo text-xl font-bold ">
           <Link href="/"> 
             <a className="flex items-center gap-2" >
@@ -21,7 +21,7 @@ function Navbar() {
             </a>
           </Link>
           </div>
-          <div className="navbar-menu flex-1 flex justify-center">
+          <div className="navbar-menu px-10 flex-1 flex justify-center">
             <Link href="/">
               <a className="p-2" >Home</a>
             </Link>
@@ -33,11 +33,11 @@ function Navbar() {
             </Link>
           </div>
 
-          <div className="cart-wrapper">
+          <div className="cart-wrapper relative">
             <button className="cart-toggle-btn" onClick={()=> setCartVisibility(!cartVisibility)} >
               <FiShoppingCart size={25} />
             </button>
-            <span className="absolute top-2" >
+            <span className="absolute top-[-8px]" >
               {cartCount}
             </span>
           </div>
