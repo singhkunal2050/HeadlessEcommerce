@@ -9,8 +9,7 @@ export const CartProvider = (props) => {
     });
     const [cartVisibility, setCartVisibility] = useState(false);
 
-    let [productsGlobal, setProductsGlobal] = useState();
-
+ 
 
   const cartStore = {cartCount,setCartCount , cart,setCart,cartVisibility,setCartVisibility};
 

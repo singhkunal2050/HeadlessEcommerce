@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useState , useEffect} from "react";
 import { useContext } from "react";
 import { CartContext } from "../context/cartContext";
 import { ProductContext } from "../context/productsContext";
@@ -53,6 +53,10 @@ function ProductButton({ productId }) {
     console.log(cart);
     setQuantity(1);
   }
+
+  useEffect(()=>{
+      setCartCount(cart.items.length)
+  },[cart])
 
   function handleQuantityChange(e) {
     if (e.target.dataset.operation.includes("plus")) {

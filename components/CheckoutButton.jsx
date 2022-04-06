@@ -15,9 +15,9 @@ function CheckoutButton() {
   }
 
   return (
-    <button className="check-out" onClick={createLinkandRedirect}>
-      CheckoutButton
-    </button>
+      <button className="check-out z-10 bg-darknight py-3 px-2 text-primaryaccent my-4 w-full" onClick={createLinkandRedirect}>
+        CheckoutButton
+      </button>
   );
 }
 

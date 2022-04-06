@@ -4,7 +4,7 @@ import ProductButton from "./ProductButton";
 
 function ProductSingle({product}) {
   return (
-    <div className="product bottom-2 shadow-sm hover:shadow-xl" key={product.id}>
+    <div className="product border-2 shadow-sm hover:shadow-xl" key={product.id}>
       <div className="product-image">
         <Image
           src={product.images[0].src}

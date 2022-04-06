@@ -5,8 +5,7 @@ import { FiShoppingCart , FiHeadphones } from "react-icons/fi"
 
 function Navbar() {
 
-  const { cart, setCart, cartCount, setCartCount , cartVisibility , setCartVisibility} =
-  useContext(CartContext);
+  const { cartVisibility , setCartVisibility, cartCount } = useContext(CartContext);
 
   return (
     <>
