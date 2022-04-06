@@ -10,7 +10,7 @@ function CheckoutButton() {
   async function createLinkandRedirect() {
     console.log("creating link");
     let checkout = await client.checkout.create();
-    checkout = await client.checkout.addLineItems(checkout.id, cart.items);
+    checkout = await client.checkout.addLineItems(checkout.id, cart);
     window.open(checkout.webUrl, "_blank");
   }
 
@@ -26,7 +26,7 @@ export default CheckoutButton;
 // export async function getServerSideProps(){
 //     const { cart } = useContext(CartContext)
 //     client.checkout.create().then((checkout) => {
-//         client.checkout.addLineItems(checkout.id, cart.items).then((checkout) => {
+//         client.checkout.addLineItems(checkout.id, cart).then((checkout) => {
 //             console.log(checkout.lineItems);
 //             console.log("Items added to checkout object ")
 //             window.location(checkout.webUrl , "_blank");

@@ -4,12 +4,8 @@ export const CartContext = createContext({});
 export const CartProvider = (props) => {
 
     const [cartCount, setCartCount] = useState(0);
-    const [cart, setCart] = useState({
-        items: [],
-    });
+    const [cart, setCart] = useState([]);
     const [cartVisibility, setCartVisibility] = useState(false);
-
- 
 
   const cartStore = {cartCount,setCartCount , cart,setCart,cartVisibility,setCartVisibility};
 

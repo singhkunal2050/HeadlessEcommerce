@@ -5,7 +5,7 @@ import { FiShoppingCart , FiHeadphones } from "react-icons/fi"
 
 function Navbar() {
 
-  const { cartVisibility , setCartVisibility, cartCount } = useContext(CartContext);
+  const { cart , cartVisibility , setCartVisibility, cartCount } = useContext(CartContext);
 
   return (
     <>
@@ -37,7 +37,7 @@ function Navbar() {
               <FiShoppingCart size={25} />
             </button>
             <span className="absolute top-[-8px]" >
-              {cartCount}
+              {cart.length}
             </span>
           </div>
         </div>

@@ -27,7 +27,7 @@ function Cart() {
         </div>
         <div className="cart-body flex flex-col gap-2">
             
-            {cart.items.length>0 ? cart.items.map(item=>{
+            {cart.length>0 ? cart.map(item=>{
               return(
                 <div key={item.variantId} className="cart-item flex border-2 shadow-sm">
                   <div className="cart-item-img flex ">
@@ -41,7 +41,7 @@ function Cart() {
                 </div>
               )
             }) : <div className="text-md font-bold text-center">Cart is Empty</div> }
-            {cart.items.length>0 && <CheckoutButton/>}
+            {cart.length>0 && <CheckoutButton/>}
 
         </div>
       </div>

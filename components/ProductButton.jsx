@@ -12,9 +12,8 @@ function ProductButton({ productId }) {
     let currentProduct = productsGlobal.find(
       (product) => product.variants[0].id == productId
     );
-    if (cart.items.length == 0) {
-      setCart({
-        items: [
+    if (cart.length == 0) {
+      setCart([
           {
             variantId: productId,
             quantity: quantity,
@@ -24,11 +23,10 @@ function ProductButton({ productId }) {
               { key: "img", value: currentProduct.images[0].src },
             ],
           },
-        ],
-      });
+        ])
     } else {
       let temp = [
-        ...cart.items,
+        ...cart,
         {
           variantId: productId,
           quantity: quantity,
@@ -47,17 +45,14 @@ function ProductButton({ productId }) {
       }, {});
       let combinedLineItems = Object.values(reducedArr);
       console.log(combinedLineItems);
-      setCart({ items: [...combinedLineItems] });
+      setCart( [...combinedLineItems] );
     }
     // alert("Product Added to Cart");
     console.log(cart);
     setQuantity(1);
   }
 
-  useEffect(()=>{
-      setCartCount(cart.items.length)
-  },[cart])
-
+  
   function handleQuantityChange(e) {
     if (e.target.dataset.operation.includes("plus")) {
       setQuantity(quantity + 1);
