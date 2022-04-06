@@ -24,7 +24,7 @@ export default function Home() {
               facilis non itaque.
             </p>
             <Link href="/shop">
-              <a className="cta cta-primary bg-darknight-700 text-white px-4 py-2 my-2">
+              <a className="cta cta-primary bg-darknight text-white px-4 py-2 my-2">
                 Shop Now
               </a>
             </Link>

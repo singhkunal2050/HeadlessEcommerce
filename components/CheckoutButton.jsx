@@ -7,21 +7,16 @@ import { useState, useEffect } from "react";
 function CheckoutButton() {
   const { cart } = useContext(CartContext);
 
-    async function createLinkandRedirect() {
-      console.log('creating link')
-      let checkout = await client.checkout.create();
-      checkout = await client.checkout.addLineItems(checkout.id, cart.items);
-      window.open(checkout.webUrl, "_blank");
-    }
-
+  async function createLinkandRedirect() {
+    console.log("creating link");
+    let checkout = await client.checkout.create();
+    checkout = await client.checkout.addLineItems(checkout.id, cart.items);
+    window.open(checkout.webUrl, "_blank");
+  }
 
   return (
-    <button
-      className="check-out"
-      onClick={createLinkandRedirect}
-    >
+    <button className="check-out" onClick={createLinkandRedirect}>
       CheckoutButton
-      <p>{checkoutState}</p>
     </button>
   );
 }
