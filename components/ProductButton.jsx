@@ -93,7 +93,7 @@ function ProductButton({ productId }) {
       />
       <button
         onClick={updateCart}
-        className="add-to-cart bg-rose-700 text-white font-bold flex-[4]"
+        className="add-to-cart bg-darknight text-white font-bold flex-[4]"
         data-product-id={productId}
       >
         Add to Cart

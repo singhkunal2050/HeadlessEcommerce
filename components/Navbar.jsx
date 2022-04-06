@@ -10,7 +10,7 @@ function Navbar() {
 
   return (
     <>
-    <nav className="bg-rose-700  text-white sticky top-0 z-10  font-montserrat ">
+    <nav className="bg-darknight  text-white sticky top-0 z-10  font-montserrat ">
       <div className="container max-w-5xl mx-auto">
         <div className="nav-wrapper flex p-4 justify-between items-center">
           <div className="navbar-logo text-xl font-bold ">
