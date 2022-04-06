@@ -2,7 +2,6 @@ import Link from "next/link";
 import { CartContext } from "../context/cartContext";
 import { useContext } from "react";
 import { FiShoppingCart , FiHeadphones } from "react-icons/fi"
- 
 
 function Navbar() {
 
@@ -10,7 +9,8 @@ function Navbar() {
   useContext(CartContext);
 
   return (
-    <nav className="bg-rose-700  text-white sticky top-0 z-10">
+    <>
+    <nav className="bg-rose-700  text-white sticky top-0 z-10  font-montserrat ">
       <div className="container max-w-5xl mx-auto">
         <div className="nav-wrapper flex p-4 justify-between items-center">
           <div className="navbar-logo text-xl font-bold ">
@@ -44,6 +44,7 @@ function Navbar() {
         </div>
       </div>
     </nav>
+    </>
   );
 }
 

@@ -16,11 +16,11 @@ function ProductSingle({product}) {
       </div>
       <div className="product-info py-4 px-2 flex flex-col">
         <Link href={"/product/" + product.handle}>
-          <a className="text-xl font-bold pb-2">
+          <a className="text-lg font-bold pb-2">
             <h3>{product.title}</h3>
           </a>
         </Link>
-        <p>
+        <p className="mb-4">
           <strong className="text-sm text-gray-600" >${product.variants[0].price}</strong>
         </p>
         <ProductButton productId={product.variants[0].id} />

@@ -17,6 +17,7 @@ function MyApp({ Component, pageProps }) {
 
   return (
     <>
+     
       <CartContext.Provider
         value={{
           cart,
