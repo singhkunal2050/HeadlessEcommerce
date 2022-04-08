@@ -55,7 +55,7 @@ function ProductButton({ productId }) {
   
   useEffect(()=>{
     if(localStorage.cart!=""){
-      // setCart(JSON.parse(localStorage.cart))
+      setCart(JSON.parse(localStorage.cart))
       console.log('Receiving from local ')
     }
   },[])
