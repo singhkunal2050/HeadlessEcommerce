@@ -3,7 +3,7 @@ import { useContext } from "react";
 import { CartContext } from "../context/cartContext";
 import Image from "next/image";
 import CheckoutButton from "./CheckoutButton";
-import { CgClose } from "react-icons/cg";
+import { CgClose , CgMathPlus , CgMathMinus } from "react-icons/cg";
 import { GiTrashCan } from "react-icons/gi";
 
 function Cart() {
@@ -48,7 +48,7 @@ function Cart() {
               return (
                 <div
                   key={item.variantId}
-                  className="cart-item flex border-2 shadow-sm"
+                  className="cart-item flex border-2 shadow-sm rounded-lg overflow-hidden min-h-[100px] mr-4"
                 >
                   <div className="cart-item-img flex ">
                     <Image

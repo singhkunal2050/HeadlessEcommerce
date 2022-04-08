@@ -25,35 +25,36 @@ export default function Home() {
         <div className="py-8">
           <h1 className="text-3xl font-bold text-center"> Our Features </h1>
 
-          <div className="grid grid-cols-2 md:grid-cols-4 py-8 gap-2">
-            <div className="p-6 border-2 border-secondaryaccent shadow-xl flex flex-col items-center">
+          <div className="grid grid-cols-2 md:grid-cols-4 py-8 gap-8">
+            <div className="p-6 border shadow-xl flex flex-col items-center rounded-lg overflow-hidden">
               <h2 className="font-bold text-2xl">Affordable</h2>
-              <AiFillMoneyCollect className="text-secondaryaccent" size={60} />
+              <AiFillMoneyCollect className="text-darknight" size={60} />
             </div>
-            <div className="p-6 border-2 border-secondaryaccent shadow-xl flex flex-col items-center">
+            <div className="p-6 border shadow-xl flex flex-col items-center rounded-lg overflow-hidden">
               <h2 className="font-bold text-2xl">Fast</h2>
-              <AiFillShop className="text-secondaryaccent" size={60} />
+              <AiFillShop className="text-darknight" size={60} />
             </div>
-            <div className="p-6 border-2 border-secondaryaccent shadow-xl flex flex-col items-center">
+            <div className="p-6 border shadow-xl flex flex-col items-center rounded-lg overflow-hidden">
               <h2 className="font-bold text-2xl">Safe</h2>
               <AiFillSafetyCertificate
-                className="text-secondaryaccent"
+                className="text-darknight"
                 size={60}
               />
             </div>
-            <div className="p-6 border-2 border-secondaryaccent shadow-xl flex flex-col items-center">
+            <div className="p-6 border shadow-xl flex flex-col items-center rounded-lg overflow-hidden">
               <h2 className="font-bold text-2xl">User Friendly</h2>
-              <AiOutlineUser className="text-secondaryaccent" size={60} />
+              <AiOutlineUser className="text-darknight" size={60} />
             </div>
           </div>
         </div>
       </Container>
 
-      <section className="min-h-screen flex justify-center items-center bg-[url('//source.unsplash.com/1000x1000?light')] bg-cover bg-no-repeat bg-fixed">
-        <h4 className="text-4xl text-darknight font-extrabold max-w-[40ch] text-center bg-secondaryaccent p-6 ">
+      <section className="min-h-screen flex flex-col justify-center items-center bg-gradient-to-tr to-indigo-600 from-darknight bg-cover bg-no-repeat bg-fixed">
+        <h4 className="text-4xl text-white font-extrabold max-w-[40ch] text-center p-6 ">
           Lorem ipsum dolor sit, amet consectetur adipisicing elit. Tempora,
           autem?
         </h4>
+        <AiFillShop className="text-white" size={60} />
       </section>
 
       <FAQ/>

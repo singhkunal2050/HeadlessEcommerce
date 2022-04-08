@@ -65,7 +65,7 @@ function ProductButton({ productId }) {
 
   return (
     <div className="add-to-cart-wrapper flex ">
-      <div className="update-quantity-wrapper flex flex-col ">
+      {/* <div className="update-quantity-wrapper flex flex-col ">
         <button
           className="border-2 py-0 px-2 h-5 border-gray-300 flex justify-center items-center" 
           data-operation="plus"
@@ -91,10 +91,10 @@ function ProductButton({ productId }) {
         id="quantity"
         value={quantity}
         className="w-10 border-2 border-gray-300 text-center flex-[1]"
-      />
+      /> */}
       <button
         onClick={updateCart}
-        className="add-to-cart bg-darknight text-white font-bold flex-[4]"
+        className="add-to-cart bg-darknight text-white font-bold flex-[4] py-2"
         data-product-id={productId}
       >
         Add to Cart
