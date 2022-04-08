@@ -52,15 +52,7 @@ function ProductButton({ productId }) {
     console.log(cart);
     setQuantity(1);
   }
-  
-  useEffect(()=>{
-    if(localStorage.cart!=""){
-      setCart(JSON.parse(localStorage.cart))
-      console.log('Receiving from local ')
-    }
-  },[])
-
-
+ 
   function handleQuantityChange(e) {
     if (e.target.dataset.operation.includes("plus")) {
       setQuantity(quantity + 1);
