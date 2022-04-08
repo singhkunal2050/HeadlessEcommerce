@@ -53,7 +53,6 @@ function ProductButton({ productId }) {
     setQuantity(1);
   }
   
-  
   // useEffect(()=>{
   //   if(localStorage.cart!="")
   //     setCart(JSON.parse(localStorage.cart))

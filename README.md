@@ -9,6 +9,7 @@
 https://github.com/dhruvangg/headless-shopify
 - pagination for products [numeric/lazy]
 https://next-auth.js.org/getting-started/example
+- use next api with mongoose for sign up and login
 
 This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
 
