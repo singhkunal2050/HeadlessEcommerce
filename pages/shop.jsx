@@ -1,12 +1,16 @@
 import ProductSingle from "../components/ProductSingle";
 import { client } from "../utils/ShopifyClient";
-import { useContext } from "react";
+import { useContext , useEffect } from "react";
 import { ProductContext } from "../context/productsContext";
 
 function Shop({ products }) {
 
   const { productsGlobal , setProductsGlobal } = useContext(ProductContext);
-  setProductsGlobal(products);
+  
+  useEffect(() => {
+    setProductsGlobal(products);
+  }, []);
+
   // console.log(products);
   return (
     <main className="shop font-montserrat ">
