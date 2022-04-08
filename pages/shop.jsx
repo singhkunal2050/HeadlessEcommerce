@@ -10,7 +10,7 @@ function Shop({ products }) {
   const { setCart } = useContext(CartContext);
   
   useEffect(()=>{
-    if(localStorage.cart!=""){
+    if(localStorage.cart){
       setCart(JSON.parse(localStorage.cart))
       console.log('Receiving from local ')
     }
