@@ -10,17 +10,12 @@ function Cart() {
   const {
     cart,
     setCart,
-    cartCount,
-    setCartCount,
     cartVisibility,
     setCartVisibility,
   } = useContext(CartContext);
 
   return (
     <>
-      {/* <div className="cart-floating-tag">
-          {JSON.stringify(cart)}
-        </div> */}
 
       <div
         className="cart-container overflow-y-auto transition-all duration-300 ease-in-out z-10 px-4 fixed right-0 top-0 bottom-0 w-full  md:w-[400px] min-h-screen bg-white"

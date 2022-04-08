@@ -2,15 +2,14 @@ import ProductSingle from "../components/ProductSingle";
 import { client } from "../utils/ShopifyClient";
 import { useContext , useEffect } from "react";
 import { ProductContext } from "../context/productsContext";
-import {CartContext } from "../context/cartContext"
+import { CartContext } from "../context/cartContext"
 
 function Shop({ products }) {
-
   const { productsGlobal , setProductsGlobal } = useContext(ProductContext);
   const { setCart } = useContext(CartContext);
   
   useEffect(()=>{
-    if(localStorage.cart!=""){
+    if(localStorage.cart){
       setCart(JSON.parse(localStorage.cart))
       console.log('Receiving from local ')
     }
