@@ -50,7 +50,7 @@ export default function Home() {
       </Container>
 
       <section className="min-h-screen flex justify-center items-center bg-[url('//source.unsplash.com/1000x1000?light')] bg-cover bg-no-repeat bg-fixed">
-        <h4 className="text-4xl font-extrabold max-w-[40ch] text-center bg-secondaryaccent p-6 ">
+        <h4 className="text-4xl text-darknight font-extrabold max-w-[40ch] text-center bg-secondaryaccent p-6 ">
           Lorem ipsum dolor sit, amet consectetur adipisicing elit. Tempora,
           autem?
         </h4>
