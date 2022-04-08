@@ -18,12 +18,12 @@ function Cart() {
     <>
 
       <div
-        className="cart-container overflow-y-auto transition-all duration-300 ease-in-out z-10 px-4 fixed right-0 top-0 bottom-0 w-full  md:w-[400px] min-h-screen bg-white"
+        className="cart-container  transition-all duration-300 ease-in-out z-10 px-4 fixed right-0 top-0 bottom-0 w-full  md:w-[400px] min-h-screen bg-white"
         style={{
           transform: cartVisibility ? "translateX(0)" : "translateX(110%)",
         }}
       >
-        <div className="cart-header flex justify-between py-4 sticky top-0 z-10 bg-white">
+        <div className="cart-header flex justify-between py-4  z-10 bg-white">
           <h1 className="font-bold text-xl text-darknight">Cart</h1>
 
           {cart.length > 0 && (
@@ -42,7 +42,7 @@ function Cart() {
             <CgClose />
           </span>
         </div>
-        <div className="cart-body flex flex-col gap-2">
+        <div className="cart-body overflow-y-auto h-[80vh] flex flex-col gap-2">
           {cart.length > 0 ? (
             cart.map((item) => {
               return (
@@ -74,8 +74,8 @@ function Cart() {
           ) : (
             <div className="text-md font-bold text-center">Cart is Empty</div>
           )}
-          {cart.length > 0 && <CheckoutButton />}
         </div>
+        {cart.length > 0 && <CheckoutButton />}
       </div>
     </>
   );
