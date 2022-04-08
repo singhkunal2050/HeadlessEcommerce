@@ -13,17 +13,19 @@ function ProductButton({ productId }) {
       (product) => product.variants[0].id == productId
     );
     if (cart.length == 0) {
-      setCart([
-          {
-            variantId: productId,
-            quantity: quantity,
-            customAttributes: [
-              { key: "title", value: currentProduct.title },
-              { key: "price", value: currentProduct.variants[0].price },
-              { key: "img", value: currentProduct.images[0].src },
-            ],
-          },
-        ])
+      let item = [
+        {
+          variantId: productId,
+          quantity: quantity,
+          customAttributes: [
+            { key: "title", value: currentProduct.title },
+            { key: "price", value: currentProduct.variants[0].price },
+            { key: "img", value: currentProduct.images[0].src },
+          ],
+        },
+      ];
+      setCart(item)
+      localStorage.cart = JSON.stringify(item)
     } else {
       let temp = [
         ...cart,
