@@ -38,6 +38,12 @@ function Login({updateComponent}) {
           password
         })
       });
+
+      console.log( JSON.stringify({
+        email,
+        password
+      }))
+
       const response = await rawResponse.json();
       if(response.success){
         alert("Logged in Successfully")
