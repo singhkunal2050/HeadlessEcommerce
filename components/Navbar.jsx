@@ -38,16 +38,16 @@ function Navbar() {
                 onClick={() => setNav(!nav)}
               />
               <Link href="/">
-                <a className="p-2">Home</a>
+                <a className="p-2" onClick={()=>setNav(false)}>Home</a>
               </Link>
               <Link href="/shop">
-                <a className="p-2">Shop</a>
+                <a className="p-2"  onClick={()=>setNav(false)}>Shop</a>
               </Link>
-              <Link href="/about">
-                <a className="p-2">About</a>
+              <Link href="/about" >
+                <a className="p-2" onClick={()=>setNav(false)}>About</a>
               </Link>
               <Link href="/login-signup">
-                <a className="p-2">Login</a>
+                <a className="p-2"  onClick={()=>setNav(false)}>Login</a>
               </Link>
             </div>
 
