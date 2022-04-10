@@ -1,58 +1,59 @@
 import React from "react";
 import Container from "./Container";
-import {useState} from "react"
-import { AiFillGoogleCircle } from "react-icons/ai"
+import { useState } from "react";
+import { AiFillGoogleCircle } from "react-icons/ai";
 
-function Login({updateComponent}) {
-
+function Login({ updateComponent }) {
   const [email, setemail] = useState("");
   const [password, setpassword] = useState("");
 
-  function handleChange(e){
-    console.log(e.target.name)
-    switch(e.target.name){
-      case "email" : {
-        setemail(e.target.value) 
-        break
-      } 
-      case "password" : {
-        setpassword(e.target.value) 
-        break
-      } 
+  function handleChange(e) {
+    console.log(e.target.name);
+    switch (e.target.name) {
+      case "email": {
+        setemail(e.target.value);
+        break;
+      }
+      case "password": {
+        setpassword(e.target.value);
+        break;
+      }
     }
   }
 
-  async function handlSubmit(e){
+  async function handlSubmit(e) {
     e.preventDefault();
-    if(!(email && password)){
-      console.log('Something is missing')
-    }else{
-      const rawResponse = await fetch('/api/loginUser', {
-        method: 'POST',
+    if (!(email && password)) {
+      console.log("Something is missing");
+    } else {
+      const rawResponse = await fetch("/api/loginUser", {
+        method: "POST",
         headers: {
-          'Accept': 'application/json',
-          'Content-Type': 'application/json'
+          "Accept": "application/json",
+          "Content-Type": "application/json",
         },
         body: JSON.stringify({
           email,
-          password
-        })
+          password,
+        }),
       });
 
-      console.log( JSON.stringify({
-        email,
-        password
-      }))
+      console.log(
+        JSON.stringify({
+          email,
+          password,
+        })
+      );
 
       const response = await rawResponse.json();
-      if(response.success){
-        alert("Logged in Successfully")
-      }else{
-        alert("Something Fishy going on!")
+      if (response.success) {
+        alert("Logged in Successfully");
+      } else {
+        alert("Something Fishy going on!");
       }
     }
-    setemail('')
-    setpassword('')
+    setemail("");
+    setpassword("");
   }
 
   return (
@@ -127,9 +128,15 @@ function Login({updateComponent}) {
           </div>
 
           <div className="py-4">
-            Not a Member? <button onClick={()=>updateComponent("register")} className="font-bold text-center"> Sign Up Here</button>
+            Not a Member?{" "}
+            <button
+              onClick={() => updateComponent("register")}
+              className="font-bold text-center"
+            >
+              {" "}
+              Sign Up Here
+            </button>
           </div>
-
         </form>
       </Container>
     </section>
