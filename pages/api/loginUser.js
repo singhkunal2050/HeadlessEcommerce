@@ -8,19 +8,19 @@ export default async function handler(req, res) {
     await connect();
     switch (method) {
       case "POST": {
-        const user = await User.findOne({email:req.body.email ,password:req.body.password});
-        if(user){
-          res.json({ success:true , "id":user._id});
-        }else{
-          res.json({ success:false });
+        const user = await User.findOne({
+          email: req.body.email,
+          password: req.body.password,
+        });
+        if (user) {
+          res.json({ success: true, id: user._id });
+        } else {
+          res.json({ success: false });
         }
-      }
-      default : {
-        res.json({ success:false });
       }
     }
   } catch (err) {
-    res.json({ success:false , err});
+    res.json({ success: false, err });
     console.log(err);
   }
 }
