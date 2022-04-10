@@ -1,51 +1,68 @@
 import Link from "next/link";
 import { CartContext } from "../context/cartContext";
-import { useContext } from "react";
-import { FiShoppingCart , FiHeadphones } from "react-icons/fi"
+import { useContext, useState } from "react";
+import { FiShoppingCart, FiHeadphones, FiMenu } from "react-icons/fi";
+import { CgClose } from "react-icons/cg";
 
 function Navbar() {
-
-  const { cart , cartVisibility , setCartVisibility } = useContext(CartContext);
+  const { cart, cartVisibility, setCartVisibility } = useContext(CartContext);
+  const [nav, setNav] = useState(false);
 
   return (
     <>
-    <nav className="bg-darknight  text-white sticky top-0 z-10  font-montserrat ">
-      <div className="container max-w-5xl mx-auto">
-        <div className="nav-wrapper flex flex-wrap p-4 justify-center items-center">
-          <div className="navbar-logo text-xl font-bold ">
-          <Link href="/"> 
-            <a className="flex items-center gap-2" >
-              <FiHeadphones/>
-              <h2>Ecommerce</h2>
-            </a>
-          </Link>
-          </div>
-          <div className="navbar-menu px-10 flex-1 flex justify-center">
-            <Link href="/">
-              <a className="p-2" >Home</a>
-            </Link>
-            <Link href="/shop">
-              <a className="p-2" >Shop</a>
-            </Link>
-            <Link href="/about">
-              <a className="p-2">About</a>
-            </Link>
-            <Link href="/login-signup">
-              <a className="p-2">Login</a>
-            </Link>
-          </div>
+      <nav className="bg-darknight  text-white sticky top-0 z-10  font-montserrat ">
+        <div className="container max-w-5xl mx-auto">
+          <div className="nav-wrapper flex flex-wrap p-4 justify-between items-center">
+            <FiMenu
+              size={20}
+              className="top-6 left-8 md:hidden"
+              onClick={() => setNav(!nav)}
+            />
+            <div className="navbar-logo text-xl font-bold ">
+              <Link href="/">
+                <a className="flex items-center gap-2">
+                  <FiHeadphones />
+                  <h2>Ecommerce</h2>
+                </a>
+              </Link>
+            </div>
+            <div
+              style={{
+                transform: nav ? "translateX(0)" : "translateX(-110%)",
+              }}
+              className="navbar-menu z-20 flex flex-col justify-center items-center transition-all ease-in-out duration-500 fixed bg-white inset-0 text-darknight  md:static md:!translate-x-0 md:bg-darknight md:text-white md:px-10 md:flex-row md:flex-1"
+            >
+              <CgClose
+                size={20}
+                className="fixed top-8 right-8 md:hidden"
+                onClick={() => setNav(!nav)}
+              />
+              <Link href="/">
+                <a className="p-2">Home</a>
+              </Link>
+              <Link href="/shop">
+                <a className="p-2">Shop</a>
+              </Link>
+              <Link href="/about">
+                <a className="p-2">About</a>
+              </Link>
+              <Link href="/login-signup">
+                <a className="p-2">Login</a>
+              </Link>
+            </div>
 
-          <div className="cart-wrapper relative mr-5">
-            <button className="cart-toggle-btn" onClick={()=> setCartVisibility(!cartVisibility)} >
-              <FiShoppingCart size={25} />
-            </button>
-            <span className="absolute top-[-8px]" >
-              {cart.length}
-            </span>
+            <div className="cart-wrapper relative mr-5">
+              <button
+                className="cart-toggle-btn"
+                onClick={() => setCartVisibility(!cartVisibility)}
+              >
+                <FiShoppingCart size={25} />
+              </button>
+              <span className="absolute top-[-8px]">{cart.length}</span>
+            </div>
           </div>
         </div>
-      </div>
-    </nav>
+      </nav>
     </>
   );
 }
