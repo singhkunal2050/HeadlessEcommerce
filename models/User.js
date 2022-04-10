@@ -1,7 +1,6 @@
 import mongoose from "mongoose";
-
-if(mongoose.models.Users){
-  const User = mongoose.model(
+if(mongoose.models.User===undefined){
+  const UserSchema = mongoose.model(
     "User",
     {
       _id: {
@@ -19,4 +18,4 @@ if(mongoose.models.Users){
   );
 }
 
-module.exports = mongoose.models.Users || mongoose.model('Users', UsersSchema);
+module.exports = mongoose.models.User || mongoose.model('Users', UserSchema);

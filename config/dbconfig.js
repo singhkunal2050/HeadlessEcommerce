@@ -1,14 +1,22 @@
-require('dotenv').config()
+/* This is a database connection function*/
+import mongoose from 'mongoose'
 
-const username = process.env.DB_USERNAME
-const pass = process.env.DB_PASSWORD
-const collectionname = process.env.DB_COLLECTIONNAME
-const hostname = process.env.DB_HOSTNAME
+const connection = {} /* creating connection object*/
 
-console.log({
-  username, pass, collectionname, hostname
-})
+async function dbConnect() {
+  /* check if we have connection to our databse*/
+  if (connection.isConnected) {
+    return
+  }
 
-module.exports = {
-    url: `mongodb+srv://${username}:${pass}@${hostname}/${collectionname}`
+  console.log(process.env.MONGODB_URI)
+  /* connecting to our database */
+  const db = await mongoose.connect(process.env.MONGODB_URI, {
+    useNewUrlParser: true,
+    useUnifiedTopology: true,
+    })
+
+  connection.isConnected = db.connections[0].readyState
 }
+
+export default dbConnect

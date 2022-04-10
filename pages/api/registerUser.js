@@ -1,16 +1,13 @@
-// Next.js API route support: https://nextjs.org/docs/api-routes/introduction
-const dbConfig = require('../../config/dbconfig');
-const mongoose = require('mongoose')
-const User = require('../../models/User'); 
+import dbConnect from "../../config/dbconfig";
+import User from "../../models/User";
 
-export default function handler(req, res) {
-  mongoose.connect(dbConfig.url, {
-    useNewUrlParser: true
-  }).then(() => {
-    res.status(200).json({ name: "Successfully connected to the database" });
-    console.log("Successfully connected to the database");    
-  }).catch(err => {
-    res.status(200).json({ name: "Could not connect to the database. Exiting now..." });
-    console.log('Could not connect to the database. Exiting now...', err);
-  });
+export default async function handler(req, res) {
+  try {
+    const { method } = req;
+    await dbConnect();
+    // let user = await User.create(req.body);
+    res.status(200).json("user");
+  } catch (er) {
+    res.status(200).json({ err: er });
+  }
 }
