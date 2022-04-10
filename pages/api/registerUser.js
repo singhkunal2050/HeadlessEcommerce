@@ -13,10 +13,11 @@ export default async function handler(req, res) {
       }
       case "POST": {
         let user = await User.create(req.body);
-        res.json(user);
+        res.json({ success:true , user});
       }
     }
   } catch (err) {
+    res.json({ success:false , err});
     console.log(err);
   }
 }

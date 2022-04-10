@@ -43,9 +43,16 @@ function Signup({ updateComponent }) {
           password
         })
       });
-      const content = await rawResponse.json();
-      console.log(content)
+      const {success} = await rawResponse.json();
+      if(success){
+        alert("Registered Successfully")
+      }else{
+        alert("Something Fishy going on!")
+      }
     }
+    setname('')
+    setemail('')
+    setpassword('')
   }
 
   return (
