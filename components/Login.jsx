@@ -2,7 +2,7 @@ import React from "react";
 import Container from "./Container";
 import { AiFillGoogleCircle } from "react-icons/ai"
 
-function Login() {
+function Login({updateComponent}) {
   return (
     <section className="py-8">
       <Container>
@@ -68,8 +68,11 @@ function Login() {
             Sign in With Google
           </div>
 
+          <div className="py-4">
+            Not a Member? <button onClick={()=>updateComponent("register")} className="font-bold text-center"> Sign Up Here</button>
+          </div>
+
         </form>
-       
       </Container>
     </section>
   );
