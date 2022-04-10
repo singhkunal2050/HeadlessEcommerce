@@ -1,13 +1,59 @@
 import React from "react";
 import Container from "./Container";
+import {useState} from "react"
 import { AiFillGoogleCircle } from "react-icons/ai"
 
 function Login({updateComponent}) {
+
+  const [email, setemail] = useState("");
+  const [password, setpassword] = useState("");
+
+  function handleChange(e){
+    console.log(e.target.name)
+    switch(e.target.name){
+      case "email" : {
+        setemail(e.target.value) 
+        break
+      } 
+      case "password" : {
+        setpassword(e.target.value) 
+        break
+      } 
+    }
+  }
+
+  async function handlSubmit(e){
+    e.preventDefault();
+    if(!(email && password)){
+      console.log('Something is missing')
+    }else{
+      const rawResponse = await fetch('/api/loginUser', {
+        method: 'POST',
+        headers: {
+          'Accept': 'application/json',
+          'Content-Type': 'application/json'
+        },
+        body: JSON.stringify({
+          email,
+          password
+        })
+      });
+      const response = await rawResponse.json();
+      if(response.success){
+        alert("Logged in Successfully")
+      }else{
+        alert("Something Fishy going on!")
+      }
+    }
+    setemail('')
+    setpassword('')
+  }
+
   return (
     <section className="py-8">
       <Container>
         <h4 className="text-4xl  font-extrabold text-center p-6 ">Login</h4>
-        <form className="max-w-md mx-auto">
+        <form onSubmit={handlSubmit} className="max-w-md mx-auto">
           <div className="mb-6">
             <label
               htmlFor="email"
@@ -16,6 +62,9 @@ function Login({updateComponent}) {
               Your email
             </label>
             <input
+              name="email"
+              onChange={handleChange}
+              value={email}
               type="email"
               id="email"
               className="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 "
@@ -31,13 +80,16 @@ function Login({updateComponent}) {
               Your password
             </label>
             <input
+              name="password"
+              onChange={handleChange}
+              value={password}
               type="password"
               id="password"
               className="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 "
               required
             />
           </div>
-          <div className="flex items-start mb-6">
+          {/* <div className="flex items-start mb-6">
             <div className="flex items-center h-5">
               <input
                 id="remember"
@@ -55,7 +107,7 @@ function Login({updateComponent}) {
                 Remember me
               </label>
             </div>
-          </div>
+          </div> */}
           <button
             type="submit"
             className="text-primaryaccent bg-darknight focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm w-full  px-5 py-2.5 text-center "
