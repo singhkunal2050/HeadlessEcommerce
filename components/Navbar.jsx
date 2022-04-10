@@ -30,6 +30,9 @@ function Navbar() {
             <Link href="/about">
               <a className="p-2">About</a>
             </Link>
+            <Link href="/login-signup">
+              <a className="p-2">Login</a>
+            </Link>
           </div>
 
           <div className="cart-wrapper relative mr-5">
