@@ -1,5 +1,5 @@
 import React from "react";
-import { useContext } from "react";
+import { useContext , useEffect } from "react";
 import { CartContext } from "../context/cartContext";
 import Image from "next/image";
 import CheckoutButton from "./CheckoutButton";
@@ -13,6 +13,13 @@ function Cart() {
     cartVisibility,
     setCartVisibility,
   } = useContext(CartContext);
+  
+  useEffect(()=>{
+    if(localStorage.cart){
+      setCart(JSON.parse(localStorage.cart))
+      console.log('Receiving from local ')
+    }
+  },[])
 
   return (
     <>

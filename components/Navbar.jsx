@@ -1,13 +1,13 @@
 import Link from "next/link";
 import { CartContext } from "../context/cartContext";
-import { useContext, useState } from "react";
+import { useContext, useState  } from "react";
 import { FiShoppingCart, FiHeadphones, FiMenu , FiUser } from "react-icons/fi";
 import { CgClose } from "react-icons/cg";
 
 function Navbar() {
   const { cart, cartVisibility, setCartVisibility } = useContext(CartContext);
   const [nav, setNav] = useState(false);
-
+ 
   return (
     <>
       <nav className="bg-darknight  text-white sticky top-0 z-10  font-montserrat ">
