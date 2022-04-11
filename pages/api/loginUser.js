@@ -15,7 +15,7 @@ export default async function handler(req, res) {
         if (user) {
           res.json({ success: true, id: user._id });
         } else {
-          res.json({ success: false });
+          res.json({ success: false , err: {message:"Invalid email or password"} });
         }
       }
     }

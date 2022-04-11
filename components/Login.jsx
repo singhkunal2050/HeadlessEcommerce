@@ -49,7 +49,7 @@ function Login({ updateComponent }) {
       if (response.success) {
         alert("Logged in Successfully");
       } else {
-        alert("Something Fishy going on!");
+        alert(response.err.message);
       }
     }
     setemail("");
