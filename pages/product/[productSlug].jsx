@@ -4,8 +4,7 @@ import { client } from "../../utils/ShopifyClient";
 import parse from "html-react-parser"
 
 function Product({ key, product }) {
-  console.log(product)
-
+  // console.log(product)
   return (
     <main>
       <Container>
