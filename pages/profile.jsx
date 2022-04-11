@@ -4,7 +4,7 @@ import Container from "../components/Container";
 function profile() {
   return (
     <Container>
-      <section className="min-h-screen">
+      <section className="min-h-screen font-montserrat">
       <h4 className="text-4xl text-darknight font-extrabold text-center p-6 ">
         Profile
       </h4>

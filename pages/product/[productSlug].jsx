@@ -1,25 +1,44 @@
+import Container from "../../components/Container";
 import ProductButton from "../../components/ProductButton";
 import { client } from "../../utils/ShopifyClient";
+import parse from "html-react-parser"
 
 function Product({ key, product }) {
+  console.log(product)
+
   return (
     <main>
-      <div className="container">
-        <section data-id={key}  className="product-single">
+      <Container>
+        <section
+          data-id={key}
+          className="grid grid-cols-1 md:grid-cols-2 gap-2 py-8"
+        >
           <div className="product-images">
             {product.images.map((img) => {
-              return <img key={img.src}  src={img.src} height="400px" width="400px" />;
+              return (
+                <img
+                  key={img.src}
+                  src={img.src}
+                  height="1000px"
+                  width="1000px"
+                />
+              );
             })}
           </div>
-          <div className="product-description">
-            <h1>{product.title}</h1>
-            <p>{product.description}</p>
-            <p>${product.variants[0].price}</p>
+          <div className="product-description pt-4">
+            <h1 className="text-2xl md:text-5xl font-bold font-montserrat mb-2">{product.title}</h1>
+            <p className="mb-2" >{product.description.substr(0,200)}...</p>
+            <p className="mb-2" >${product.variants[0].price}</p>
             <ProductButton productId={product.variants[0].id} />
           </div>
         </section>
+        <section>
+            <div className="mb-2 prose lg:prose-sm font-montserrat text-darknight max-w-4xl pb-8 mx-auto" >
+              {parse(product.descriptionHtml)}
+            </div>
+        </section>
         <section className="suggestions"></section>
-      </div>
+      </Container>
     </main>
   );
 }
@@ -44,7 +63,6 @@ export async function getStaticProps({ params }) {
   //   console.log(context)
   let product = await client.product.fetchByHandle(params.productSlug);
   product = JSON.parse(JSON.stringify(product));
-
   return {
     props: {
       product,

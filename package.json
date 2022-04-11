@@ -11,6 +11,7 @@
   "dependencies": {
     "bcryptjs": "^2.4.3",
     "dotenv": "^16.0.0",
+    "html-react-parser": "^1.4.10",
     "jsonwebtoken": "^8.5.1",
     "mongoose": "^6.2.10",
     "next": "12.1.4",
@@ -20,6 +21,7 @@
     "shopify-buy": "^2.14.0"
   },
   "devDependencies": {
+    "@tailwindcss/typography": "^0.5.2",
     "autoprefixer": "^10.4.4",
     "eslint": "8.12.0",
     "eslint-config-next": "12.1.4",
