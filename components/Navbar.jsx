@@ -47,7 +47,7 @@ function Navbar() {
                 <a className="p-2" onClick={()=>setNav(false)}>About</a>
               </Link>
               <Link href="/login-signup">
-                <a className="p-2"  onClick={()=>setNav(false)}>Login</a>
+                <a className="p-2"  onClick={()=>setNav(false)}>Login / Signup</a>
               </Link>
             </div>
 

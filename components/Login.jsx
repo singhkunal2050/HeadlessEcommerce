@@ -2,10 +2,17 @@ import React from "react";
 import Container from "./Container";
 import { useState } from "react";
 import { AiFillGoogleCircle } from "react-icons/ai";
+import { IoMdEye, IoMdEyeOff } from "react-icons/io";
 
 function Login({ updateComponent }) {
   const [email, setemail] = useState("");
   const [password, setpassword] = useState("");
+  const [passwordVisibility , setPasswordVisibility] = useState(false)
+
+  function togglePasswordVisibility(e){
+    console.log(passwordVisibility)
+    passwordVisibility  ?  setPasswordVisibility(false) : setPasswordVisibility(true)
+  }
 
   function handleChange(e) {
     console.log(e.target.name);
@@ -29,7 +36,7 @@ function Login({ updateComponent }) {
       const rawResponse = await fetch("/api/loginUser", {
         method: "POST",
         headers: {
-          "Accept": "application/json",
+          Accept: "application/json",
           "Content-Type": "application/json",
         },
         body: JSON.stringify({
@@ -75,7 +82,7 @@ function Login({ updateComponent }) {
               type="email"
               id="email"
               className="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 "
-              placeholder="name@flowbite.com"
+              placeholder="name@email.com"
               required
             />
           </div>
@@ -86,15 +93,20 @@ function Login({ updateComponent }) {
             >
               Your password
             </label>
-            <input
-              name="password"
-              onChange={handleChange}
-              value={password}
-              type="password"
-              id="password"
-              className="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 "
-              required
-            />
+            <div className="relative">
+              <input
+                name="password"                
+                onChange={handleChange}
+                value={password}
+                type = { passwordVisibility ? "text" : "password" }
+                id="password"
+                className="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 "
+                required
+              />
+              <div onClick={()=>togglePasswordVisibility()} className="absolute right-0 top-0 px-2 py-1 bg-gray-100 border-2 flex flex-col justify-center min-h-[100%] cursor-pointer">
+                  {passwordVisibility ?  <IoMdEyeOff/> : <IoMdEye/>}
+              </div>
+            </div>
           </div>
           {/* <div className="flex items-start mb-6">
             <div className="flex items-center h-5">
@@ -114,7 +126,7 @@ function Login({ updateComponent }) {
                 Remember me
               </label>
             </div>
-          </div> */}  
+          </div> */}
           <button
             type="submit"
             className="text-primaryaccent bg-darknight focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm w-full  px-5 py-2.5 text-center "

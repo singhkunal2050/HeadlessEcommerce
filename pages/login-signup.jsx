@@ -14,11 +14,9 @@ function LoginSignup() {
     });
   }
 
-  return page === "login" ? (
-    <Login updateComponent={ updateComponent } />
-  ) : (
-    <Signup updateComponent={ updateComponent } />
-  );
+  return <section className="font-montserrat">
+    {page === "login" ? <Login updateComponent={updateComponent}/> : <Signup updateComponent={updateComponent}/>}
+  </section> 
 }
 
 export default LoginSignup;

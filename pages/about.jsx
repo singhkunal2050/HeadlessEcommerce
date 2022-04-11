@@ -3,7 +3,7 @@ import FAQ from '../components/FAQ'
 
 function about() {
   return (
-    <main>
+    <main className="font-montserrat">
       
       <FAQ/>
 
