@@ -17,7 +17,6 @@ function Toast({ message, type }) {
           <MdError />
         </div>
       )}
-
       <div className="ml-3 text-sm font-normal">{message}</div>
       <button
         type="button"
