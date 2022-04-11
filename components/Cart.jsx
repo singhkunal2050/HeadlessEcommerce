@@ -18,7 +18,7 @@ function Cart() {
     <>
 
       <div
-        className="cart-container  transition-all duration-300 ease-in-out z-10 px-4 fixed right-0 top-0 bottom-0 w-full  md:w-[400px] min-h-screen bg-white"
+        className="cart-container font-montserrat  transition-all duration-300 ease-in-out z-10 px-4 fixed right-0 top-0 bottom-0 w-full  md:w-[400px] min-h-screen bg-white"
         style={{
           transform: cartVisibility ? "translateX(0)" : "translateX(110%)",
         }}
@@ -63,7 +63,7 @@ function Cart() {
                     <h4 className="text-darknight font-bold flex-1">
                       {item.customAttributes[0].value}
                     </h4>
-                    <p>{item.quantity}</p>
+                     <p>Quantity : {item.quantity}</p>
                     <p className="font-extralight text-gray-800">
                       ${item.customAttributes[1].value}
                     </p>
