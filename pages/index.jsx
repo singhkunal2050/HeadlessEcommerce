@@ -49,7 +49,7 @@ export default function Home() {
         </div>
       </Container>
 
-      <section className="min-h-screen flex flex-col justify-center items-center bg-gradient-to-tr to-indigo-600 from-darknight bg-cover bg-no-repeat bg-fixed">
+      <section className="min-h-screen flex flex-col justify-center items-center bg-gradient-to-tr to-darknight from-darknight bg-cover bg-no-repeat bg-fixed">
         <h4 className="text-4xl text-white font-extrabold max-w-[40ch] text-center p-6 ">
           Lorem ipsum dolor sit, amet consectetur adipisicing elit. Tempora,
           autem?

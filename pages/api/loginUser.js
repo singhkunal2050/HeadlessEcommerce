@@ -1,4 +1,5 @@
 // Next.js API route support: https://nextjs.org/docs/api-routes/introduction
+import mongoose from "mongoose";
 import connect from "../../config/dbconfig";
 import User from "../../models/User";
 
@@ -10,12 +11,16 @@ export default async function handler(req, res) {
       case "POST": {
         const user = await User.findOne({
           email: req.body.email,
-          password: req.body.password,
         });
         if (user) {
-          res.json({ success: true, id: user._id });
+          let passwordValid = await user.validatePassword(req.body.password);
+          if(passwordValid){
+            res.json({ success: true, id: user._id });
+          }else{
+            res.json({ success: false , err: {message:"Invalid Password"} });
+          }
         } else {
-          res.json({ success: false , err: {message:"Invalid email or password"} });
+          res.json({ success: false , err: {message:"Invalid Email"} });
         }
       }
     }
