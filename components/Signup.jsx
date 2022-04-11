@@ -43,11 +43,11 @@ function Signup({ updateComponent }) {
           password
         })
       });
-      const {success} = await rawResponse.json();
-      if(success){
+      const response = await rawResponse.json();
+      if(response.success){
         alert("Registered Successfully")
       }else{
-        alert("Something Fishy going on!")
+        alert(response.err.message.split(':')[2])
       }
     }
     setname('')

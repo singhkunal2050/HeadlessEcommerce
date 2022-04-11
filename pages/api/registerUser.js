@@ -18,6 +18,6 @@ export default async function handler(req, res) {
     }
   } catch (err) {
     res.json({ success:false , err});
-    console.log(err);
+    console.log(err.message);
   }
 }

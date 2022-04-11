@@ -23,7 +23,7 @@ function Cart() {
           transform: cartVisibility ? "translateX(0)" : "translateX(110%)",
         }}
       >
-        <div className="cart-header flex justify-between py-4  z-10 bg-white">
+        <div className="cart-header flex justify-between  items-center py-4  z-10 bg-white">
           <h1 className="font-bold text-xl text-darknight">Cart</h1>
 
           {cart.length > 0 && (
