@@ -10,12 +10,12 @@ function Login({ updateComponent }) {
   const [passwordVisibility , setPasswordVisibility] = useState(false)
 
   function togglePasswordVisibility(e){
-    console.log(passwordVisibility)
+    // console.log(passwordVisibility)
     passwordVisibility  ?  setPasswordVisibility(false) : setPasswordVisibility(true)
   }
 
   function handleChange(e) {
-    console.log(e.target.name);
+    // console.log(e.target.name);
     switch (e.target.name) {
       case "email": {
         setemail(e.target.value);

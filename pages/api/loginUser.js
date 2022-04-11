@@ -1,7 +1,7 @@
 // Next.js API route support: https://nextjs.org/docs/api-routes/introduction
-import mongoose from "mongoose";
 import connect from "../../config/dbconfig";
 import User from "../../models/User";
+import jwt from "jsonwebtoken";
 
 export default async function handler(req, res) {
   const { method } = req;
@@ -15,7 +15,8 @@ export default async function handler(req, res) {
         if (user) {
           let passwordValid = await user.validatePassword(req.body.password);
           if(passwordValid){
-            res.json({ success: true, id: user._id });
+            let token = jwt.sign( JSON.stringify(user) , process.env.JWT_SECRET )
+            res.json({ success: true, id: user._id , token: token });
           }else{
             res.json({ success: false , err: {message:"Invalid Password"} });
           }

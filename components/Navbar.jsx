@@ -1,7 +1,7 @@
 import Link from "next/link";
 import { CartContext } from "../context/cartContext";
 import { useContext, useState } from "react";
-import { FiShoppingCart, FiHeadphones, FiMenu } from "react-icons/fi";
+import { FiShoppingCart, FiHeadphones, FiMenu , FiUser } from "react-icons/fi";
 import { CgClose } from "react-icons/cg";
 
 function Navbar() {
@@ -51,7 +51,15 @@ function Navbar() {
               </Link>
             </div>
 
-            <div className="cart-wrapper relative mr-5">
+            <div className="user-wrapper mr-8 cursor-pointer">
+              <Link href="/profile">
+                <a>
+                  <FiUser size={25} />
+                </a>
+              </Link>
+            </div>
+
+            <div className="cart-wrapper relative">
               <button
                 className="cart-toggle-btn"
                 onClick={() => setCartVisibility(!cartVisibility)}
