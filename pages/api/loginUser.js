@@ -16,6 +16,7 @@ export default async function handler(req, res) {
           let passwordValid = await user.validatePassword(req.body.password);
           if(passwordValid){
             let token = jwt.sign( JSON.stringify(user) , process.env.JWT_SECRET )
+            console.log({token : token} );
             res.json({ success: true, id: user._id , token: token });
           }else{
             res.json({ success: false , err: {message:"Invalid Password"} });
