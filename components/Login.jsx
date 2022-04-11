@@ -57,7 +57,7 @@ function Login({ updateComponent }) {
   }
 
   return (
-    <section className="py-8">
+    <section className="py-8 min-h-[80vh]">
       <Container>
         <h4 className="text-4xl  font-extrabold text-center p-6 ">Login</h4>
         <form onSubmit={handlSubmit} className="max-w-md mx-auto">
@@ -114,7 +114,7 @@ function Login({ updateComponent }) {
                 Remember me
               </label>
             </div>
-          </div> */}
+          </div> */}  
           <button
             type="submit"
             className="text-primaryaccent bg-darknight focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm w-full  px-5 py-2.5 text-center "
