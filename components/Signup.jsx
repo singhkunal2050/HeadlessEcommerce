@@ -2,11 +2,19 @@ import React from "react";
 import Container from "./Container";
 import { AiFillGoogleCircle } from "react-icons/ai";
 import { useState } from "react";
+import { IoMdEye, IoMdEyeOff } from "react-icons/io";
 
 function Signup({ updateComponent }) {
   const [name, setname] = useState("");
   const [email, setemail] = useState("");
   const [password, setpassword] = useState("");
+  const [passwordVisibility , setPasswordVisibility] = useState(false)
+
+  function togglePasswordVisibility(e){
+    console.log(passwordVisibility)
+    passwordVisibility  ?  setPasswordVisibility(false) : setPasswordVisibility(true)
+  }
+
 
   function handleChange(e){
     console.log(e.target.name)
@@ -103,15 +111,20 @@ function Signup({ updateComponent }) {
             >
               Your password
             </label>
-            <input
-              value={password}
-              name="password"
-              onChange={handleChange}
-              type="password"
-              id="password"
-              className="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 "
-              required
-            />
+            <div className="relative">
+              <input
+                name="password"                
+                onChange={handleChange}
+                value={password}
+                type = { passwordVisibility ? "text" : "password" }
+                id="password"
+                className="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 "
+                required
+              />
+              <div onClick={()=>togglePasswordVisibility()} className="absolute rounded-lg right-0 top-0 px-2 py-1 bg-gray-100 border-2 flex flex-col justify-center min-h-[100%] cursor-pointer">
+                  {passwordVisibility ?  <IoMdEyeOff/> : <IoMdEye/>}
+              </div>
+            </div>
           </div>
           {/* <div className="flex items-start mb-6">
             <div className="flex items-center h-5">
