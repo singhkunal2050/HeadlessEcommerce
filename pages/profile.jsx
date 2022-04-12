@@ -57,7 +57,7 @@ function Profile() {
             <div className="grid grid-cols-1 md:grid-cols-2 py-2 gap-4">
               {users.length > 0 &&
                 users.map((user) => (
-                  <div className="p-4 shadow-xl border-2 border-l-darknight border-l-8">
+                  <div key={user.id} className="p-4 shadow-xl border-2 border-l-darknight border-l-8">
                     <h1 className="text-xl font-semibold"> {user.name}</h1>
                     <p> {user.email}</p>
                   </div>
