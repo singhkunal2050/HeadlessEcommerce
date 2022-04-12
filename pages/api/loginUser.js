@@ -14,15 +14,21 @@ export default async function handler(req, res) {
         });
         if (user) {
           let passwordValid = await user.validatePassword(req.body.password);
-          if(passwordValid){
-            let token = jwt.sign( JSON.stringify(user) , process.env.JWT_SECRET )
-            console.log({token : token} );
-            res.json({ success: true, id: user._id , token: token });
-          }else{
-            res.json({ success: false , err: {message:"Invalid Password"} });
+          if (passwordValid) {
+            let token = jwt.sign(
+              {
+                exp: Math.floor(Date.now() / 1000) + 60 * 60,
+                data: JSON.stringify(user),
+              },
+              process.env.JWT_SECRET
+            );
+            // console.log({token : token} );
+            res.json({ success: true, id: user._id, token: token });
+          } else {
+            res.json({ success: false, err: { message: "Invalid Password" } });
           }
         } else {
-          res.json({ success: false , err: {message:"Invalid Email"} });
+          res.json({ success: false, err: { message: "Invalid Email" } });
         }
       }
     }

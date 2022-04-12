@@ -48,7 +48,7 @@ UserSchema.pre('save', async function save(next) {
 });
 
 UserSchema.methods.validatePassword = async function validatePassword(data) {
-  console.log({d : data , p : this.password})
+  // console.log({d : data , p : this.password})
   return bcrypt.compare(data, this.password);
 };
 

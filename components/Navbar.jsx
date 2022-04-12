@@ -1,13 +1,23 @@
 import Link from "next/link";
 import { CartContext } from "../context/cartContext";
-import { useContext, useState  } from "react";
-import { FiShoppingCart, FiHeadphones, FiMenu , FiUser } from "react-icons/fi";
+import { useContext, useState , useEffect } from "react";
+import { FiShoppingCart, FiHeadphones, FiMenu } from "react-icons/fi";
 import { CgClose } from "react-icons/cg";
+import UserAvatar from "./UserAvatar";
+import { UserContext } from "../context/userContext";
 
 function Navbar() {
   const { cart, cartVisibility, setCartVisibility } = useContext(CartContext);
   const [nav, setNav] = useState(false);
- 
+  const { user, setUser , isLoggedIn } = useContext(UserContext);
+
+  useEffect(()=>{
+    if(sessionStorage.user){
+      setUser(sessionStorage.user)
+      console.log('LoggedIn from session ')
+    }
+  },[])
+
   return (
     <>
       <nav className="bg-darknight  text-white sticky top-0 z-10  font-montserrat ">
@@ -38,26 +48,28 @@ function Navbar() {
                 onClick={() => setNav(!nav)}
               />
               <Link href="/">
-                <a className="p-2" onClick={()=>setNav(false)}>Home</a>
+                <a className="p-2" onClick={() => setNav(false)}>
+                  Home
+                </a>
               </Link>
               <Link href="/shop">
-                <a className="p-2"  onClick={()=>setNav(false)}>Shop</a>
+                <a className="p-2" onClick={() => setNav(false)}>
+                  Shop
+                </a>
               </Link>
-              <Link href="/about" >
-                <a className="p-2" onClick={()=>setNav(false)}>About</a>
+              <Link href="/about">
+                <a className="p-2" onClick={() => setNav(false)}>
+                  About
+                </a>
               </Link>
               <Link href="/login-signup">
-                <a className="p-2"  onClick={()=>setNav(false)}>Login / Signup</a>
-              </Link>
-            </div>
-
-            <div className="user-wrapper mr-8 cursor-pointer">
-              <Link href="/profile">
-                <a>
-                  <FiUser size={25} />
+                <a className="p-2" onClick={() => setNav(false)}>
+                  Login / Signup
                 </a>
               </Link>
             </div>
+
+            {user && JSON.parse(user) ? <UserAvatar /> : ''}
 
             <div className="cart-wrapper relative">
               <button

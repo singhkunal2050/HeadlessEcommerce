@@ -1,14 +1,16 @@
 import React from "react";
 import Container from "./Container";
-import { useState } from "react";
+import { useState , useContext } from "react";
 import { AiFillGoogleCircle } from "react-icons/ai";
 import { IoMdEye, IoMdEyeOff } from "react-icons/io";
+import { UserContext } from "../context/userContext";
 
 function Login({ updateComponent }) {
   const [email, setemail] = useState("");
   const [password, setpassword] = useState("");
   const [passwordVisibility, setPasswordVisibility] = useState(false);
   const [loading, setloading] = useState(false);
+  const { user , setUser } = useContext(UserContext);
 
   function togglePasswordVisibility(e) {
     // console.log(passwordVisibility)
@@ -48,7 +50,6 @@ function Login({ updateComponent }) {
           password,
         }),
       });
-
       console.log(
         JSON.stringify({
           email,
@@ -59,6 +60,7 @@ function Login({ updateComponent }) {
       const response = await rawResponse.json();
       if (response.success) {
         alert("Logged in Successfully");
+        setUser(sessionStorage.user = JSON.stringify({id: response.id , token :response.token }));
       } else {
         alert(response.err.message);
       }
