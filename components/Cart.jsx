@@ -87,23 +87,23 @@ function Cart() {
                     <div className="flex items-center gap-1">
                       <button
                         data-product-id={item.variantId}
-                        data-operation="plus"
-                        onClick={updateCart}
-                        className="font-semibold text-gray-400 h-6 w-6 flex justify-center items-center border-2 rounded-full"
-                      >
-                        +
-                      </button>
-                      <button
-                        data-product-id={item.variantId}
                         data-operation="minus"
                         onClick={updateCart}
                         className="font-semibold text-gray-400 h-6 w-6 flex justify-center items-center border-2 rounded-full"
                       >
                         -
                       </button>
+                      <button
+                        data-product-id={item.variantId}
+                        data-operation="plus"
+                        onClick={updateCart}
+                        className="font-semibold text-gray-400 h-6 w-6 flex justify-center items-center border-2 rounded-full"
+                      >
+                        +
+                      </button>
                     </div>
                     <p className="font-extralight text-gray-800">
-                      ${item.customAttributes[1].value}
+                      ${item.customAttributes[1].value*item.quantity}
                     </p>
                   </div>
                 </div>
