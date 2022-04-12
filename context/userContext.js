@@ -2,7 +2,7 @@ import { createContext, useState, useEffect } from "react";
 export const UserContext = createContext({});
 
 export const UserProvider = (props) => {
-  const [user, setUser] = useState();
+  const [user, setUser] = useState(null);
 
   const isLoggedIn = () =>{
     if(user==null)

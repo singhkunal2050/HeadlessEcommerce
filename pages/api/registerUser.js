@@ -22,7 +22,7 @@ export default async function handler(req, res) {
                 res.json({ err });
               }else{
                 // if token is valid, get users and send it back
-                const users = await User.find({});
+                const users = await User.find({}, 'name email' );
                 res.status(200).json(users);
                 // res.json({ decoded });
               }
