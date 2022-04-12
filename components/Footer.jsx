@@ -19,9 +19,10 @@ function Footer() {
           </a>
         </p>
         <h2 className="pt-2 pb-2 text-lg font-bold">Stack</h2>
-        <p> Nextjs | TailwindCSS | JWT | Mongodb | Shopify Storefront API</p>
+        <p> Nextjs | Nodejs | TailwindCSS | JWT | Mongodb | Shopify Storefront API</p>
         <div className="flex gap-4 justify-center pt-4">
           <Image src="/next-js.svg" width={40} height={40} />
+          <Image src="/node.webp" width={40} height={40} />
           <Image src="/tailwind.png" width={40} height={40} />
           <Image src="/jwt.png" width={40} height={40} />
           <Image src="/mongodb.svg" width={40} height={40} />
