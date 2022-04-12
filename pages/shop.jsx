@@ -16,11 +16,11 @@ function Shop({ products }) {
   return (
     <main className="shop font-montserrat  ">
       <Container>
-        <div className=" p-4 md:px-10 flex gap-4 items-center sticky top-[68px] left-0 right-0 z-10">
+        <div className=" p-4 md:px-10 flex gap-4 items-center sticky top-[60px] left-0 right-0 z-10">
           <input
             value={search}
             onChange={(e) => setsearch(e.target.value)}
-            className="px-3 py-2 w-[80%] rounded-xl border-4 mx-auto"
+            className="px-3 py-2 w-full md:w-[80%] rounded-sm border-4 mx-auto"
             type="text"
             placeholder="Search..."
           />
