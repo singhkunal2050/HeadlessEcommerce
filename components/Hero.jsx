@@ -12,9 +12,7 @@ function Hero() {
             Shop All you Need at One Place!!
           </h1>
           <p className="text-xl text-gray-600 my-2">
-            Lorem, ipsum dolor sit amet consectetur adipisicing elit. Sed
-            eveniet natus fuga mollitia numquam adipisci quam reiciendis facilis
-            non itaque.
+            Buy Awesome Products With Headless Ecommerce Daily!
           </p>
           <Link href="/shop">
             <a className="cta cta-primary bg-darknight text-white px-4 py-2 my-2">
