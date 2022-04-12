@@ -21,18 +21,18 @@ function Cart() {
     let operation = e.target.dataset.operation;
     let productId = e.target.dataset.productId;
     // increment decrement cart item
-    let newCart = cart.map(item=>{
-      if(item.variantId == productId){
-        if(operation == "plus" ){
-          item.quantity += 1
-        }else if(operation == "minus" && item.quantity>1){
-          item.quantity -= 1
+    let newCart = cart.filter((item) => {
+      if (item.variantId == productId) {
+        if (operation == "plus") {
+          item.quantity += 1;
+        } else if (operation == "minus") {
+          item.quantity -= 1;
         }
       }
-      return item
-    })
+      return item.quantity > 0;
+    });
     setCart(newCart);
-    localStorage.cart = JSON.stringify(cart)
+    localStorage.cart = JSON.stringify(cart);
   }
 
   return (
@@ -79,32 +79,38 @@ function Cart() {
                       height="100px"
                     />
                   </div>
-                  <div className="cart-item-details p-4  pt-1 flex flex-col">
+                  <div className="cart-item-details p-4  pt-1 flex flex-col flex-1">
                     <h4 className="text-darknight font-bold flex-1">
                       {item.customAttributes[0].value}
                     </h4>
-                    <p>Quantity : {item.quantity}</p>
-                    <div className="flex items-center gap-1">
-                      <button
-                        data-product-id={item.variantId}
-                        data-operation="minus"
-                        onClick={updateCart}
-                        className="font-semibold text-gray-400 h-6 w-6 flex justify-center items-center border-2 rounded-full"
-                      >
-                        -
-                      </button>
-                      <button
-                        data-product-id={item.variantId}
-                        data-operation="plus"
-                        onClick={updateCart}
-                        className="font-semibold text-gray-400 h-6 w-6 flex justify-center items-center border-2 rounded-full"
-                      >
-                        +
-                      </button>
+                    <div  className="flex justify-between items-end" >
+                      <div>
+                        <p className="text-xs py-2">
+                          Quantity : {item.quantity}
+                        </p>
+                        <div className="flex items-center gap-1">
+                          <button
+                            data-product-id={item.variantId}
+                            data-operation="minus"
+                            onClick={updateCart}
+                            className="font-semibold text-gray-400 h-6 w-6 flex justify-center items-center border-2 rounded-full"
+                          >
+                            -
+                          </button>
+                          <button
+                            data-product-id={item.variantId}
+                            data-operation="plus"
+                            onClick={updateCart}
+                            className="font-semibold text-gray-400 h-6 w-6 flex justify-center items-center border-2 rounded-full"
+                          >
+                            +
+                          </button>
+                        </div>
+                      </div>
+                      <p className="font-extralight text-gray-800">
+                        ${item.customAttributes[1].value * item.quantity}
+                      </p>
                     </div>
-                    <p className="font-extralight text-gray-800">
-                      ${item.customAttributes[1].value*item.quantity}
-                    </p>
                   </div>
                 </div>
               );
