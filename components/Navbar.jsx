@@ -42,7 +42,7 @@ function Navbar() {
               style={{
                 transform: nav ? "translateX(0)" : "translateX(-110%)",
               }}
-              className="navbar-menu z-20 flex flex-col justify-center items-center transition-all ease-in-out duration-500 fixed bg-white inset-0 text-darknight  md:static md:!translate-x-0 md:bg-darknight md:text-white md:px-10 md:flex-row md:flex-1"
+              className="navbar-menu z-50 flex flex-col justify-center items-center transition-all ease-in-out duration-500 fixed bg-white inset-0 text-darknight  md:static md:!translate-x-0 md:bg-darknight md:text-white md:px-10 md:flex-row md:flex-1"
             >
               <CgClose
                 size={20}

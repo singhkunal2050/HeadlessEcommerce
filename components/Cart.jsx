@@ -38,7 +38,7 @@ function Cart() {
   return (
     <>
       <div
-        className="cart-container font-montserrat  transition-all duration-300 ease-in-out z-10 px-4 fixed right-0 top-0 bottom-0 w-full  md:w-[400px] min-h-screen bg-white"
+        className="cart-container font-montserrat  transition-all duration-300 ease-in-out z-20 px-4 fixed right-0 top-0 bottom-0 w-full  md:w-[400px] min-h-screen bg-white"
         style={{
           transform: cartVisibility ? "translateX(0)" : "translateX(110%)",
         }}
