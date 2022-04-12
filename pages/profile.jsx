@@ -5,7 +5,7 @@ import { useContext } from "react";
 import { CgLogOut } from "react-icons/cg"
 import { useRouter } from "next/router";
 
-function profile() {
+function Profile() {
   const { user ,setUser} = useContext(UserContext);
   const router = useRouter()
 
@@ -38,4 +38,4 @@ function profile() {
   );
 }
 
-export default profile;
+export default Profile;
