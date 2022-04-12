@@ -1,6 +1,6 @@
 import Link from "next/link";
 import { CartContext } from "../context/cartContext";
-import { useContext, useState , useEffect } from "react";
+import { useContext, useState, useEffect } from "react";
 import { FiShoppingCart, FiHeadphones, FiMenu } from "react-icons/fi";
 import { CgClose } from "react-icons/cg";
 import UserAvatar from "./UserAvatar";
@@ -9,14 +9,16 @@ import { UserContext } from "../context/userContext";
 function Navbar() {
   const { cart, cartVisibility, setCartVisibility } = useContext(CartContext);
   const [nav, setNav] = useState(false);
-  const { user, setUser , isLoggedIn } = useContext(UserContext);
+  const { user, setUser, isLoggedIn } = useContext(UserContext);
 
-  useEffect(()=>{
-    if(sessionStorage.user){
-      setUser(sessionStorage.user)
-      console.log('LoggedIn from session ')
+  useEffect(() => {
+    if (sessionStorage.user) {
+      setUser(sessionStorage.user);
+      console.log("LoggedIn from session ");
     }
-  },[])
+  }, []);
+
+  console.log(user && JSON.parse(user));
 
   return (
     <>
@@ -69,9 +71,9 @@ function Navbar() {
               </Link>
             </div>
 
-            {user && JSON.parse(user) ? <UserAvatar /> : ''}
+            {user && JSON.parse(user) ? <UserAvatar /> : ""}
 
-            <div className="cart-wrapper relative">
+            <div className="cart-wrapper relative mr-2 mt-1">
               <button
                 className="cart-toggle-btn"
                 onClick={() => setCartVisibility(!cartVisibility)}

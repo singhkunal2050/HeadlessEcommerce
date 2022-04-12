@@ -1,29 +1,42 @@
 import React from "react";
-import { useContext , useEffect } from "react";
+import { useContext, useEffect } from "react";
 import { CartContext } from "../context/cartContext";
 import Image from "next/image";
 import CheckoutButton from "./CheckoutButton";
-import { CgClose , CgMathPlus , CgMathMinus } from "react-icons/cg";
+import { CgClose, CgMathPlus, CgMathMinus } from "react-icons/cg";
 import { GiTrashCan } from "react-icons/gi";
 
 function Cart() {
-  const {
-    cart,
-    setCart,
-    cartVisibility,
-    setCartVisibility,
-  } = useContext(CartContext);
-  
-  useEffect(()=>{
-    if(localStorage.cart){
-      setCart(JSON.parse(localStorage.cart))
-      console.log('Receiving from local ')
+  const { cart, setCart, cartVisibility, setCartVisibility } =
+    useContext(CartContext);
+
+  useEffect(() => {
+    if (localStorage.cart) {
+      setCart(JSON.parse(localStorage.cart));
+      console.log("Receiving from local ");
     }
-  },[])
+  }, []);
+
+  function updateCart(e) {
+    let operation = e.target.dataset.operation;
+    let productId = e.target.dataset.productId;
+    // increment decrement cart item
+    let newCart = cart.map(item=>{
+      if(item.variantId == productId){
+        if(operation == "plus" ){
+          item.quantity += 1
+        }else if(operation == "minus" && item.quantity>1){
+          item.quantity -= 1
+        }
+      }
+      return item
+    })
+    setCart(newCart);
+    localStorage.cart = JSON.stringify(cart)
+  }
 
   return (
     <>
-
       <div
         className="cart-container font-montserrat  transition-all duration-300 ease-in-out z-10 px-4 fixed right-0 top-0 bottom-0 w-full  md:w-[400px] min-h-screen bg-white"
         style={{
@@ -70,7 +83,25 @@ function Cart() {
                     <h4 className="text-darknight font-bold flex-1">
                       {item.customAttributes[0].value}
                     </h4>
-                     <p>Quantity : {item.quantity}</p>
+                    <p>Quantity : {item.quantity}</p>
+                    <div className="flex items-center gap-1">
+                      <button
+                        data-product-id={item.variantId}
+                        data-operation="plus"
+                        onClick={updateCart}
+                        className="font-semibold text-gray-400 h-6 w-6 flex justify-center items-center border-2 rounded-full"
+                      >
+                        +
+                      </button>
+                      <button
+                        data-product-id={item.variantId}
+                        data-operation="minus"
+                        onClick={updateCart}
+                        className="font-semibold text-gray-400 h-6 w-6 flex justify-center items-center border-2 rounded-full"
+                      >
+                        -
+                      </button>
+                    </div>
                     <p className="font-extralight text-gray-800">
                       ${item.customAttributes[1].value}
                     </p>

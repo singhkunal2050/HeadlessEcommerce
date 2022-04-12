@@ -5,8 +5,8 @@ import { ProductContext } from "../context/productsContext";
 
 function ProductButton({ productId }) {
   const [quantity, setQuantity] = useState(1);
-  const { cart, setCart, cartCount, setCartCount } = useContext(CartContext);
-  const { productsGlobal, setProductsGlobal } = useContext(ProductContext);
+  const { cart, setCart } = useContext(CartContext);
+  const { productsGlobal } = useContext(ProductContext);
 
   function updateCart(e) {
     let currentProduct = productsGlobal.find(
