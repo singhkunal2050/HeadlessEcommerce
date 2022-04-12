@@ -11,7 +11,7 @@ function Profile() {
 
   const logout = () =>{
     setUser(sessionStorage.user=null)
-    router.push('/shop')
+    router.push('/')
   }
 
   return (

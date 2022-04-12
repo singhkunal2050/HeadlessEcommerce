@@ -4,6 +4,7 @@ import { useState , useContext } from "react";
 import { AiFillGoogleCircle } from "react-icons/ai";
 import { IoMdEye, IoMdEyeOff } from "react-icons/io";
 import { UserContext } from "../context/userContext";
+import { useRouter } from "next/router";
 
 function Login({ updateComponent }) {
   const [email, setemail] = useState("");
@@ -11,6 +12,7 @@ function Login({ updateComponent }) {
   const [passwordVisibility, setPasswordVisibility] = useState(false);
   const [loading, setloading] = useState(false);
   const { user , setUser } = useContext(UserContext);
+  const router = useRouter()
 
   function togglePasswordVisibility(e) {
     // console.log(passwordVisibility)
@@ -59,8 +61,8 @@ function Login({ updateComponent }) {
 
       const response = await rawResponse.json();
       if (response.success) {
-        alert("Logged in Successfully");
         setUser(sessionStorage.user = JSON.stringify({id: response.id , token :response.token }));
+        router.push('/profile')
       } else {
         alert(response.err.message);
       }
