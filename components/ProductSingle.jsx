@@ -26,7 +26,7 @@ function ProductSingle({ product }) {
           </Link>
           <p className="mb-4">
             <strong className="text-sm text-gray-600">
-              ${product.variants[0].price}
+             ₹{product.variants[0].price}
             </strong>
           </p>
         </div>

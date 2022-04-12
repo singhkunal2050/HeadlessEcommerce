@@ -108,7 +108,7 @@ function Cart() {
                         </div>
                       </div>
                       <p className="font-extralight text-gray-800">
-                        ${item.customAttributes[1].value * item.quantity}
+                        ₹{item.customAttributes[1].value * item.quantity}
                       </p>
                     </div>
                   </div>
