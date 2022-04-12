@@ -7,7 +7,7 @@ function Footer() {
         <p>&copy; 2021 - Headless Ecommerce</p>
         <p className="pt-2">
           Made with  ♥  by 
-            <a className="px-1 font-bold" target="_blank"  href="https://www.singhkunal2050.dev"> @singhkunal2050 </a>
+            <a className="px-1 font-bold" target="_blank" rel="noreferrer" href="https://www.singhkunal2050.dev"> @singhkunal2050 </a>
         </p>
       </div>
     </footer>
