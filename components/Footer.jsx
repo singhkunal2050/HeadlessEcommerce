@@ -9,7 +9,8 @@ function Footer() {
           Made with  ♥  by 
             <a className="px-1 font-bold" target="_blank" rel="noreferrer" href="https://www.singhkunal2050.dev"> @singhkunal2050 </a>
         </p>
-        <p>Stack &gt; Nextjs,Mongodb,TailwindCSS,JWT,Shopify Storefront API</p>
+        <h2 className="pt-2 pb-2 text-lg font-bold">Stack</h2>
+        <p > Nextjs | Mongodb | TailwindCSS | JWT | Shopify Storefront API</p>
       </div>
     </footer>
   );
