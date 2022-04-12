@@ -31,7 +31,7 @@ function Shop({ products }) {
               return <ProductSingle key={product.id} product={product} />;
             })
           ) : (
-            <div>
+            <>
               {productsGlobal
                 .filter((product) =>
                   product.title.toLowerCase().includes(search.toLowerCase())
@@ -39,8 +39,7 @@ function Shop({ products }) {
                 .map((product) => {
                   return <ProductSingle key={product.id} product={product} />;
                 })}
-              )}
-            </div>
+            </>
           )}
         </div>
       </Container>
