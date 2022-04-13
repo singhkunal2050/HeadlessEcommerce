@@ -19,7 +19,6 @@ function Navbar() {
     }
   }, []);
 
-
   return (
     <>
       <nav className="bg-darknight  text-white sticky top-0 z-10  font-montserrat ">
@@ -64,11 +63,14 @@ function Navbar() {
                   About
                 </a>
               </Link>
-              <Link href="/login-signup">
-                <a className="p-2" onClick={() => setNav(false)}>
-                  Login / Signup
-                </a>
-              </Link>
+
+              {!user && (
+                <Link href="/login-signup">
+                  <a className="p-2" onClick={() => setNav(false)}>
+                    Login / Signup
+                  </a>
+                </Link>
+              )}
             </div>
 
             {user ? <UserAvatar /> : ""}
