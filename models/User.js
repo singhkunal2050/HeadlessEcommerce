@@ -39,11 +39,17 @@ var UserSchema = new mongoose.Schema({
   },
   pin: {
     type: String,
-    required: false
+    required: false,
+    default: "322432"
   },
   phone: {
     type: String,
-    required: false
+    required: false,
+    default: "12312312"
+  },
+  picture:{
+    type:String,
+    required:false
   }
 });
 

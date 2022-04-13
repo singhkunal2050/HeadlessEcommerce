@@ -13,7 +13,7 @@ function Profile() {
 
   const logout = () => {
     setUser((sessionStorage.user = null));
-    router.push("/");
+    router.push("/login-signup");
   };
 
   // useEffect(() => {
@@ -45,9 +45,11 @@ function Profile() {
             <p className=""> Logged In! {user.id}</p>
 
             <div className="max-w-4xl mx-auto my-5 p-10 shadow-xl border-2 border-l-darknight border-l-8">
-              <Image className="rounded-full p-2 !border-solid !border-1 !border-darknight" src="https://source.unsplash.com/300x300?profile" height={100} width={100} />
+              <Image className="rounded-full p-2 !border-solid !border-1 !border-darknight" src={`${user.picture}`} height={100} width={100} />
               <h1 className="text-xl font-semibold"> {user.name}</h1>
-              <p> {user.email}</p>
+              <p> Email : {user.email}</p>
+              <p> Phone : {user.phone}</p>
+              <p> PinCode : {user.pin}</p>
             </div>
 
             <button

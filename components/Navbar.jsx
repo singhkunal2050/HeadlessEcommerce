@@ -13,12 +13,12 @@ function Navbar() {
 
   useEffect(() => {
     if (sessionStorage.user) {
-      setUser(JSON.parse(sessionStorage.user));
       console.log("LoggedIn from session ");
+      // console.log(sessionStorage.user);
+      setUser(JSON.parse(sessionStorage.user));
     }
   }, []);
 
-  console.log(user);
 
   return (
     <>

@@ -33,11 +33,24 @@ export default async function handler(req, res) {
       } 
       break;
       case "POST": {
-        let user = await User.create(req.body);
+
+        let w = parseInt(((Math.random(300, 400) * 100000) % 100) + 300);
+          let h = parseInt(((Math.random(300, 400) * 300000) % 200) + 400);
+          let user = await User.create({
+            ...req.body,
+            picture: `https://source.unsplash.com/${w}x${h}?profile`,
+          });
+          
+
+        // let user = await User.create(req.body);
         res.json({ success:true , user});
       }
       break;
-
+      case "DELETE":{
+        let bool = await User.deleteMany({});
+        res.json({success : bool});
+      }
+      break;
     }
   } catch (err) {
     res.json({ success:false , err});
