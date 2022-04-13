@@ -30,7 +30,16 @@ function CheckoutButton() {
       shippingAddress
     );
     setloading(false);
-    window.open(checkout.webUrl, "_blank");
+    // window.open(checkout.webUrl, "_blank");
+    window.open(checkout.webUrl,'targetWindow',
+                                   `toolbar=true,
+                                    location=no,
+                                    status=no,
+                                    menubar=no,
+                                    scrollbars=yes,
+                                    resizable=yes,
+                                    width=500,
+                                    height=800`)
   }
 
   return (
