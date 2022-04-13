@@ -37,53 +37,56 @@ function Navbar() {
                 </a>
               </Link>
             </div>
-            <div
-              style={{
-                transform: nav ? "translateX(0)" : "translateX(-110%)",
-              }}
-              className="navbar-menu z-50 flex flex-col justify-center items-center transition-all ease-in-out duration-500 fixed bg-white inset-0 text-darknight  md:static md:!translate-x-0 md:bg-darknight md:text-white md:px-10 md:flex-row md:flex-1"
-            >
-              <CgClose
-                size={20}
-                className="fixed top-8 right-8 md:hidden"
-                onClick={() => setNav(!nav)}
-              />
-              <Link href="/">
-                <a className="p-2" onClick={() => setNav(false)}>
-                  Home
-                </a>
-              </Link>
-              <Link href="/shop">
-                <a className="p-2" onClick={() => setNav(false)}>
-                  Shop
-                </a>
-              </Link>
-              <Link href="/about">
-                <a className="p-2" onClick={() => setNav(false)}>
-                  About
-                </a>
-              </Link>
-
-              {!user && (
-                <Link href="/login-signup">
+            <div className="nav-content flex items-center">
+              <div
+                style={{
+                  transform: nav ? "translateX(0)" : "translateX(-110%)",
+                }}
+                className="navbar-menu z-50 flex flex-col justify-center items-center transition-all ease-in-out duration-500 fixed bg-white inset-0 text-darknight  md:static md:!translate-x-0 md:bg-darknight md:text-white md:px-10 md:flex-row md:flex-1"
+              >
+                <CgClose
+                  size={20}
+                  className="fixed top-8 right-8 md:hidden"
+                  onClick={() => setNav(!nav)}
+                />
+                <Link href="/">
                   <a className="p-2" onClick={() => setNav(false)}>
-                    Login / Signup
+                    Home
                   </a>
                 </Link>
-              )}
+                <Link href="/shop">
+                  <a className="p-2" onClick={() => setNav(false)}>
+                    Shop
+                  </a>
+                </Link>
+                <Link href="/about">
+                  <a className="p-2" onClick={() => setNav(false)}>
+                    About
+                  </a>
+                </Link>
+
+                {!user && (
+                  <Link href="/login-signup">
+                    <a className="p-2" onClick={() => setNav(false)}>
+                      Login / Signup
+                    </a>
+                  </Link>
+                )}
+              </div>
+
+              {user ? <UserAvatar /> : ""}
+
+              <div className="cart-wrapper relative mr-2">
+                <button
+                  className="cart-toggle-btn"
+                  onClick={() => setCartVisibility(!cartVisibility)}
+                >
+                  <FiShoppingCart size={25} />
+                </button>
+                <span className="absolute top-[-8px]">{cart.length}</span>
+              </div>
             </div>
 
-            {user ? <UserAvatar /> : ""}
-
-            <div className="cart-wrapper relative mr-2 mt-1">
-              <button
-                className="cart-toggle-btn"
-                onClick={() => setCartVisibility(!cartVisibility)}
-              >
-                <FiShoppingCart size={25} />
-              </button>
-              <span className="absolute top-[-8px]">{cart.length}</span>
-            </div>
           </div>
         </div>
       </nav>
