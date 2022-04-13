@@ -22,9 +22,10 @@ export default async function handler(req, res) {
                 res.json({ err });
               }else{
                 // if token is valid, get users and send it back
-                const users = await User.find({}, 'name email' );
+                const users = await User.find({}, '-password' );
+                // const {name , email , _id  } = decoded 
                 res.status(200).json(users);
-                // res.json({ decoded });
+                // res.status(200).json({name , email , _id});
               }
             });
           }

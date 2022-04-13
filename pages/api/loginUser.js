@@ -23,7 +23,7 @@ export default async function handler(req, res) {
               process.env.JWT_SECRET
             );
             // console.log({token : token} );
-            res.json({ success: true, id: user._id, token: token });
+            res.json({ success: true, token: token , user : {id:user._id , name:user.name , email:user.email} });
           } else {
             res.json({ success: false, err: { message: "Invalid Password" } });
           }

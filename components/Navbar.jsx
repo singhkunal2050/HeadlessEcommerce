@@ -13,12 +13,12 @@ function Navbar() {
 
   useEffect(() => {
     if (sessionStorage.user) {
-      setUser(sessionStorage.user);
+      setUser(JSON.parse(sessionStorage.user));
       console.log("LoggedIn from session ");
     }
   }, []);
 
-  console.log(user && JSON.parse(user));
+  console.log(user);
 
   return (
     <>
@@ -71,7 +71,7 @@ function Navbar() {
               </Link>
             </div>
 
-            {user && JSON.parse(user) ? <UserAvatar /> : ""}
+            {user ? <UserAvatar /> : ""}
 
             <div className="cart-wrapper relative mr-2 mt-1">
               <button

@@ -61,7 +61,8 @@ function Login({ updateComponent }) {
 
       const response = await rawResponse.json();
       if (response.success) {
-        setUser(sessionStorage.user = JSON.stringify({id: response.id , token :response.token }));
+        setUser({...response.user , token :response.token });
+        sessionStorage.user = JSON.stringify(user);
         router.push('/profile')
       } else {
         alert(response.err.message);
