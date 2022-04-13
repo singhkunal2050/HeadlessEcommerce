@@ -31,8 +31,9 @@ function Cart() {
       }
       return item.quantity > 0;
     });
+    localStorage.cart= JSON.stringify(newCart)
     setCart(newCart);
-    localStorage.cart = JSON.stringify(cart);
+    console.log(cart)
   }
 
   return (
