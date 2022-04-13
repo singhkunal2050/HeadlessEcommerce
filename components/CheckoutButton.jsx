@@ -13,6 +13,22 @@ function CheckoutButton() {
     console.log("creating link");
     let checkout = await client.checkout.create();
     checkout = await client.checkout.addLineItems(checkout.id, cart);
+    const shippingAddress = {
+      address1: "Chestnut Street 92",
+      address2: "Apartment 2",
+      city: "Louisville",
+      company: null,
+      country: "United States",
+      firstName: "Bob",
+      lastName: "Norman",
+      phone: "555-625-1199",
+      province: "Kentucky",
+      zip: "40202",
+    };
+    checkout = await client.checkout.updateShippingAddress(
+      checkout.id,
+      shippingAddress
+    );
     setloading(false);
     window.open(checkout.webUrl, "_blank");
   }
