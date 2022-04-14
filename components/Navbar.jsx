@@ -77,19 +77,19 @@ function Navbar() {
 
               {user ? <UserAvatar /> : ""}
 
-              <div className="cart-wrapper relative mr-2">
-                <button
-                  className="cart-toggle-btn"
-                  onClick={() => setCartVisibility(!cartVisibility)}
-                >
-                  <FiShoppingCart size={25} />
-                </button>
-                <span className="absolute top-[-8px]">{cart.length}</span>
+              <div className="flex gap-4 justify-center">
+                <ToggleTheme />
+                <div className="cart-wrapper relative mr-2 flex items-center  ">
+                  <button
+                    className="cart-toggle-btn"
+                    onClick={() => setCartVisibility(!cartVisibility)}
+                  >
+                    <FiShoppingCart size={25} />
+                  </button>
+                  <span className="absolute top-[-8px] right-[-10px]">{cart.length}</span>
+                </div>
               </div>
             </div>
-                
-            <ToggleTheme/>
-
           </div>
         </div>
       </nav>

@@ -4,7 +4,7 @@ import { HiSun, HiMoon } from "react-icons/hi";
 function ToggleTheme() {
   return (
     <button className="flex gap-2 items-center justify-center">
-      <HiMoon size={20} /> <HiSun size={20} />
+      {true ? <HiMoon size={25} /> : <HiSun size={25} />}
     </button>
   );
 }

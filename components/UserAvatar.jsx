@@ -9,7 +9,7 @@ function UserAvatar() {
   const { user, setUser } = useContext(UserContext);
 
   return (
-    <div className="user-wrapper mr-8 cursor-pointer">
+    <div className="user-wrapper mr-8 cursor-pointer flex items-center">
       <Link href="/profile">
         <a>
           <FiUser size={25} />
