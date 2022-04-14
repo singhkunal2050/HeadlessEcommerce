@@ -94,7 +94,7 @@ function Cart() {
                             data-product-id={item.variantId}
                             data-operation="minus"
                             onClick={updateCart}
-                            className="font-semibold text-gray-400 h-6 w-6 flex justify-center items-center border-2 rounded-full"
+                            className="font-semibold dark:border-gray-600 dark:text-gray-500 text-gray-400 h-6 w-6 flex justify-center items-center border-2 rounded-full"
                           >
                             -
                           </button>
@@ -102,7 +102,7 @@ function Cart() {
                             data-product-id={item.variantId}
                             data-operation="plus"
                             onClick={updateCart}
-                            className="font-semibold text-gray-400 h-6 w-6 flex justify-center items-center border-2 rounded-full"
+                            className="font-semibold dark:border-gray-600 dark:text-gray-500 text-gray-400 h-6 w-6 flex justify-center items-center border-2 rounded-full"
                           >
                             +
                           </button>
