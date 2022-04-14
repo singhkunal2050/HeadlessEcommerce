@@ -8,23 +8,26 @@ export const ThemeProvider = (props) => {
 
   useEffect(() => {
     if (
-      localStorage.getItem("theme") === "dark" ||
+      localStorage.getItem("theme") == "dark" ||
       window.matchMedia("(prefers-color-scheme: dark)").matches
     ) {
       setTheme("dark");
       document.documentElement.classList.add("dark");
     }
-  });
+  },[]);
 
   const toggleTheme = () => {
-    if (theme != "dark") {
+    if (
+      theme != "dark") {
+      console.log("theme was light and changing to dark");
       localStorage.theme = "dark";
       setTheme("dark");
       document.documentElement.classList.add("dark");
     } else {
+      document.documentElement.classList.remove("dark");
+      console.log("theme was dark and changing to light");
       localStorage.theme = "light";
       setTheme("light");
-      document.documentElement.classList.remove("dark");
     }
   };
 
