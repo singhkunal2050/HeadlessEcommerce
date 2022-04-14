@@ -92,7 +92,7 @@ function Login({ updateComponent }) {
               value={email}
               type="email"
               id="email"
-              className="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 "
+              className="bg-gray-50 dark:bg-gray-600 dark:text-gray-300 border border-gray-300  text-gray-900 text-sm rounded-lg focus:ring-blue-800 focus:border-blue-800 block w-full p-2.5"
               placeholder="name@email.com"
               required
             />
@@ -111,12 +111,12 @@ function Login({ updateComponent }) {
                 value={password}
                 type={passwordVisibility ? "text" : "password"}
                 id="password"
-                className="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 "
+                className="bg-gray-50 dark:bg-gray-600 dark:text-gray-300 border border-gray-300  text-gray-900 text-sm rounded-lg focus:ring-blue-800 focus:border-blue-800 block w-full p-2.5 "
                 required
               />
               <div
                 onClick={() => togglePasswordVisibility()}
-                className="absolute rounded-lg right-0 top-0 px-2 py-1 bg-gray-100 border-2 flex flex-col justify-center min-h-[100%] cursor-pointer"
+                className="absolute rounded-lg right-0 top-0 px-2 py-1 bg-gray-100 dark:bg-gray-600 border-2 flex flex-col justify-center min-h-[100%] cursor-pointer"
               >
                 {passwordVisibility ? <IoMdEyeOff /> : <IoMdEye />}
               </div>
@@ -166,7 +166,7 @@ function Login({ updateComponent }) {
             </div>
           </button>
 
-          <div className="flex py-2 border-2 mt-4 hover:bg-gray-100 cursor-pointer items-center gap-4 justify-center shadow-xl">
+          <div className="flex py-2 border-2 mt-4 hover:bg-gray-100 dark:hover:bg-gray-600 dark:border-gray-600  cursor-pointer items-center gap-4 justify-center shadow-xl">
             <AiFillGoogleCircle size={50} className="text-darknight" />
             Sign in With Google
           </div>

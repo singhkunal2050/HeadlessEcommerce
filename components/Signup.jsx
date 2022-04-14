@@ -8,63 +8,64 @@ function Signup({ updateComponent }) {
   const [name, setname] = useState("");
   const [email, setemail] = useState("");
   const [password, setpassword] = useState("");
-  const [passwordVisibility , setPasswordVisibility] = useState(false)
-  const [loading, setloading] = useState(false)
+  const [passwordVisibility, setPasswordVisibility] = useState(false);
+  const [loading, setloading] = useState(false);
 
-  function togglePasswordVisibility(e){
-    console.log(passwordVisibility)
-    passwordVisibility  ?  setPasswordVisibility(false) : setPasswordVisibility(true)
+  function togglePasswordVisibility(e) {
+    console.log(passwordVisibility);
+    passwordVisibility
+      ? setPasswordVisibility(false)
+      : setPasswordVisibility(true);
   }
 
-
-  function handleChange(e){
-    console.log(e.target.name)
-    switch(e.target.name){
-      case "name" : {
-        setname(e.target.value) 
-        break
-      } 
-      case "email" : {
-        setemail(e.target.value) 
-        break
-      } 
-      case "password" : {
-        setpassword(e.target.value) 
-        break
-      } 
+  function handleChange(e) {
+    console.log(e.target.name);
+    switch (e.target.name) {
+      case "name": {
+        setname(e.target.value);
+        break;
+      }
+      case "email": {
+        setemail(e.target.value);
+        break;
+      }
+      case "password": {
+        setpassword(e.target.value);
+        break;
+      }
     }
   }
 
-  async function handlSubmit(e){
+  async function handlSubmit(e) {
     e.preventDefault();
     setloading(true);
-    if(!(name && email && password)){
-      console.log('Something is missing')
-    }else{
-      const rawResponse = await fetch('/api/registerUser', {
-        method: 'POST',
+    if (!(name && email && password)) {
+      console.log("Something is missing");
+    } else {
+      const rawResponse = await fetch("/api/registerUser", {
+        method: "POST",
         headers: {
-          'Accept': 'application/json',
-          'Content-Type': 'application/json'
+          Accept: "application/json",
+          "Content-Type": "application/json",
         },
         body: JSON.stringify({
           name,
           email,
-          password
-        })
+          password,
+        }),
       });
       const response = await rawResponse.json();
-      if(response.success){
-        alert("Registered Successfully")
-      }else{
-        alert(response.err.message.split(':')[2])
+      if (response.success) {
+        alert("Registered Successfully");
+      } else {
+        alert(response.err.message.split(":")[2]);
       }
     }
 
-    setloading(false)
-    setname('')
-    setemail('')
-    setpassword('')
+    setloading(false);
+    setname("");
+    setemail("");
+    setpassword("");
   }
 
   return (
@@ -85,7 +86,7 @@ function Signup({ updateComponent }) {
               onChange={handleChange}
               type="text"
               id="name"
-              className="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 "
+              className="dark:bg-gray-600 dark:text-gray-300 bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 "
               placeholder="John Doe"
               required
             />
@@ -103,8 +104,8 @@ function Signup({ updateComponent }) {
               onChange={handleChange}
               type="email"
               id="email"
-              className="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 "
-              placeholder="name@flowbite.com"
+              className="dark:bg-gray-600 dark:text-gray-300 bg-gray-100 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 "
+              placeholder="name@email.com"
               required
             />
           </div>
@@ -117,16 +118,19 @@ function Signup({ updateComponent }) {
             </label>
             <div className="relative">
               <input
-                name="password"                
+                name="password"
                 onChange={handleChange}
                 value={password}
-                type = { passwordVisibility ? "text" : "password" }
+                type={passwordVisibility ? "text" : "password"}
                 id="password"
-                className="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 "
+                className="dark:bg-gray-600 dark:text-gray-300 bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 "
                 required
               />
-              <div onClick={()=>togglePasswordVisibility()} className="absolute rounded-lg right-0 top-0 px-2 py-1 bg-gray-100 border-2 flex flex-col justify-center min-h-[100%] cursor-pointer">
-                  {passwordVisibility ?  <IoMdEyeOff/> : <IoMdEye/>}
+              <div
+                onClick={() => togglePasswordVisibility()}
+                className="absolute rounded-lg right-0 top-0 px-2 py-1 bg-gray-100 dark:bg-gray-600 border-2 flex flex-col justify-center min-h-[100%] cursor-pointer"
+              >
+                {passwordVisibility ? <IoMdEyeOff /> : <IoMdEye />}
               </div>
             </div>
           </div>
@@ -174,7 +178,7 @@ function Signup({ updateComponent }) {
             </div>
           </button>
 
-          <div className="flex py-2 border-2 mt-4 hover:bg-gray-100 cursor-pointer items-center gap-4 justify-center shadow-xl">
+          <div className="flex py-2 border-2 mt-4 hover:bg-gray-100 dark:hover:bg-gray-600 dark:border-gray-600  cursor-pointer items-center gap-4 justify-center shadow-xl">
             <AiFillGoogleCircle size={50} className="text-darknight" />
             Sign Up With Google
           </div>

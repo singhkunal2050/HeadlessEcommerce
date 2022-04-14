@@ -23,7 +23,7 @@ class MyDocument extends Document {
 
           <link rel="icon" href="/public/headless.png" />
         </Head>
-        <body>
+        <body className="dark:bg-gray-800 dark:text-purple-50">
           <Main />
           <NextScript />
         </body>

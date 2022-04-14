@@ -36,7 +36,7 @@ function Profile() {
   return (
     <Container>
       <section className="min-h-screen font-montserrat">
-        <h4 className="text-4xl text-darknight font-extrabold text-center p-6 ">
+        <h4 className="text-4xl  font-extrabold text-center p-6 ">
           Profile
         </h4>
 
@@ -44,7 +44,7 @@ function Profile() {
           <div className="text-center">
             <p className=""> Logged In! {user.id}</p>
 
-            <div className="max-w-4xl mx-auto my-5 p-10 shadow-xl border-2 border-l-darknight border-l-8">
+            <div className="max-w-4xl mx-auto my-5 p-10 shadow-xl border-2 dark:border-gray-600 border-l-darknight border-l-8">
               <Image className="rounded-full p-2 !border-solid !border-1 !border-darknight" src={`${user.picture}`} height={100} width={100} />
               <h1 className="text-xl font-semibold"> {user.name}</h1>
               <p> Email : {user.email}</p>

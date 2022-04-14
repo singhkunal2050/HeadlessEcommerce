@@ -22,7 +22,7 @@ function Navbar() {
 
   return (
     <>
-      <nav className="bg-darknight  text-white sticky top-0 z-10  font-montserrat ">
+      <nav className="bg-darknight  text-white  sticky top-0 z-10  font-montserrat ">
         <div className="container max-w-5xl mx-auto">
           <div className="nav-wrapper flex flex-wrap p-4 justify-between items-center">
             <FiMenu
@@ -43,7 +43,7 @@ function Navbar() {
                 style={{
                   transform: nav ? "translateX(0)" : "translateX(-110%)",
                 }}
-                className="navbar-menu z-20 flex flex-col justify-center items-center transition-all ease-in-out duration-500 fixed bg-white inset-0 text-darknight  md:static md:!translate-x-0 md:bg-darknight md:text-white md:px-10 md:flex-row md:flex-1"
+                className="navbar-menu z-20 flex flex-col justify-center items-center transition-all ease-in-out duration-500 fixed bg-white inset-0 text-darknight  md:static md:!translate-x-0 md:bg-darknight  md:text-white md:px-10 md:flex-row md:flex-1"
               >
                 <CgClose
                   size={20}
@@ -86,7 +86,9 @@ function Navbar() {
                   >
                     <FiShoppingCart size={25} />
                   </button>
-                  <span className="absolute top-[-8px] right-[-10px]">{cart.length}</span>
+                  <span className="absolute top-[-8px] right-[-10px]">
+                    {cart.length}
+                  </span>
                 </div>
               </div>
             </div>

@@ -11,7 +11,7 @@ function Hero() {
           <h1 className="text-4xl font-bold my-2 ">
             Shop All you Need at One Place!!
           </h1>
-          <p className="text-xl text-gray-600 my-2">
+          <p className="text-xl text-gray-600 dark:text-gray-400  my-2">
             Buy Awesome Products With Headless Ecommerce Daily!
           </p>
           <Link href="/shop">

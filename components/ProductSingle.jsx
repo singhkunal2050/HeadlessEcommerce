@@ -5,7 +5,7 @@ import ProductButton from "./ProductButton";
 function ProductSingle({ product }) {
   return (
     <div
-      className="product border-2 shadow-sm hover:shadow-xl rounded-lg overflow-hidden"
+      className="product border-2 dark:border-gray-600 shadow-sm hover:shadow-xl rounded-lg overflow-hidden"
       key={product.id}
     >
       <div className="product-image">
@@ -25,7 +25,7 @@ function ProductSingle({ product }) {
             </a>
           </Link>
           <p className="mb-4">
-            <strong className="text-sm text-gray-600">
+            <strong className="text-sm text-gray-600 dark:text-gray-400">
              ₹{product.variants[0].price}
             </strong>
           </p>

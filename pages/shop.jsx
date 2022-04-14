@@ -20,7 +20,7 @@ function Shop({ products }) {
           <input
             value={search}
             onChange={(e) => setsearch(e.target.value)}
-            className="px-3 py-2 w-full md:w-[80%] rounded-sm border-4 mx-auto"
+            className="px-3 py-2 w-full md:w-[80%] rounded-sm border-2 dark:bg-gray-600 dark:border-gray-600 mx-auto "
             type="text"
             placeholder="Search..."
           />

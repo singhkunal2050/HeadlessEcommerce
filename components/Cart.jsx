@@ -39,13 +39,13 @@ function Cart() {
   return (
     <>
       <div
-        className="cart-container font-montserrat  transition-all duration-300 ease-in-out z-20 px-4 fixed right-0 top-0 bottom-0 w-full  md:w-[400px] min-h-screen bg-white"
+        className="cart-container dark:bg-gray-800 dark:text-purple-50 font-montserrat  transition-all duration-300 ease-in-out z-20 px-4 fixed right-0 top-0 bottom-0 w-full  md:w-[400px] min-h-screen bg-white"
         style={{
           transform: cartVisibility ? "translateX(0)" : "translateX(110%)",
         }}
       >
-        <div className="cart-header flex justify-between  items-center py-4  z-10 bg-white">
-          <h1 className="font-bold text-xl text-darknight">Cart</h1>
+        <div className="cart-header flex justify-between  items-center py-4  z-10 bg-white dark:bg-gray-800 dark:text-purple-50">
+          <h1 className="font-bold text-xl ">Cart</h1>
 
           {cart.length > 0 && (
             <button
@@ -69,7 +69,7 @@ function Cart() {
               return (
                 <div
                   key={item.variantId}
-                  className="cart-item flex border-2 shadow-sm rounded-lg overflow-hidden min-h-[100px] mr-4"
+                  className="cart-item flex border-2 dark:border-gray-600 shadow-sm rounded-lg overflow-hidden min-h-[100px] mr-4"
                 >
                   <div className="cart-item-img flex ">
                     <Image
@@ -81,7 +81,7 @@ function Cart() {
                     />
                   </div>
                   <div className="cart-item-details p-4  pt-1 flex flex-col flex-1">
-                    <h4 className="text-darknight font-bold flex-1">
+                    <h4 className="text-darknight dark:text-gray-200 font-bold flex-1">
                       {item.customAttributes[0].value}
                     </h4>
                     <div  className="flex justify-between items-end" >
