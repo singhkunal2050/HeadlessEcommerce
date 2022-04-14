@@ -1,5 +1,6 @@
 import React from "react";
 import Container from "./Container";
+import Link from "next/link";
 
 function FAQ() {
   return (
@@ -20,9 +21,9 @@ function FAQ() {
                   rely on the pre-results (Google Answers and Featured Snippets)
                   and can be targeted specifically with FAQ pages.
                 </p>
-                <button className="bg-darknight text-white px-3 py-2 mt-4">
-                  Know More
-                </button>
+                <Link href="/shop" >
+                    <a className="bg-darknight text-white px-3 py-2 mt-4">Know More</a> 
+                </Link>
               </div>
             );
           })}
