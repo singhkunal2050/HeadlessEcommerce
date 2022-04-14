@@ -8,6 +8,8 @@ function Shop({ products }) {
   const { productsGlobal, setProductsGlobal } = useContext(ProductContext);
   const [search, setsearch] = useState();
 
+  console.log(products)
+
   useEffect(() => {
     setProductsGlobal(products);
   }, []);
