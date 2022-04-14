@@ -8,7 +8,7 @@ function Hero() {
     <Container>
       <div className="hero grid grid-cols-1 md:grid-cols-2 place-items-center py-8">
         <div className="hero-text">
-          <h1 className="text-4xl font-bold my-2">
+          <h1 className="text-4xl font-bold my-2 ">
             Shop All you Need at One Place!!
           </h1>
           <p className="text-xl text-gray-600 my-2">

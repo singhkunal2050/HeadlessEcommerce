@@ -5,6 +5,7 @@ import { FiShoppingCart, FiHeadphones, FiMenu } from "react-icons/fi";
 import { CgClose } from "react-icons/cg";
 import UserAvatar from "./UserAvatar";
 import { UserContext } from "../context/userContext";
+import ToggleTheme from "./ToggleTheme";
 
 function Navbar() {
   const { cart, cartVisibility, setCartVisibility } = useContext(CartContext);
@@ -86,6 +87,8 @@ function Navbar() {
                 <span className="absolute top-[-8px]">{cart.length}</span>
               </div>
             </div>
+                
+            <ToggleTheme/>
 
           </div>
         </div>

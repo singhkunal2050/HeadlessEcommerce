@@ -51,7 +51,7 @@ export default Shop;
 
 export async function getStaticProps(context) {
   //   console.log(context)
-  let products = await client.product.fetchAll();
+  let products = await client.product.fetchQuery({'limit':'40'});
   let infos = await client.shop.fetchInfo(); // Fetch shop Info if you think about SEO and title and ... to your page
   let policies = await client.shop.fetchPolicies(); // fetch shop policy if you have any
 

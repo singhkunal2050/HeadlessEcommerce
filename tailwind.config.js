@@ -11,7 +11,8 @@ module.exports = {
         'secondaryaccent': '#cd8f61',
       },
       fontFamily: {
-        'montserrat': ['"Montserrat"', 'sans-serif']
+        'montserrat': ['"Montserrat"', 'sans-serif'],
+        'fira' : ['"Fira Sans"' , 'sans-serif']
       }
     },
   },

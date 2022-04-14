@@ -45,7 +45,7 @@ export default function Home() {
               />
             </div>
             <div className="p-6 border shadow-xl flex flex-col items-center rounded-lg overflow-hidden">
-              <h2 className="font-bold text-2xl">User Friendly</h2>
+              <h2 className="font-bold text-2xl">Interactive</h2>
               <FcAbout className="text-darknight" size={80} />
             </div>
           </div>
