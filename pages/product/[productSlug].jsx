@@ -32,7 +32,7 @@ function Product({ key, product }) {
           </div>
         </section>
         <section>
-            <div className="mb-2 prose lg:prose-sm font-montserrat text-darknight max-w-4xl pb-8 mx-auto" >
+            <div className="mb-2 prose lg:prose-sm font-montserrat text-darknight dark:!text-primaryaccent dark:prose-headings:text-white max-w-4xl pb-8 mx-auto" >
               {parse(product.descriptionHtml)}
             </div>
         </section>
