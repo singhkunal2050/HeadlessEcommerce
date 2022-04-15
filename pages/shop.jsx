@@ -4,16 +4,33 @@ import { useContext, useEffect, useState } from "react";
 import { ProductContext } from "../context/productsContext";
 import Container from "../components/Container";
 
-function Shop({ products }) {
+function Shop({ products, nextPage }) {
   const { productsGlobal, setProductsGlobal } = useContext(ProductContext);
   const [search, setsearch] = useState();
 
-  console.log(products)
+  console.log(products);
   useEffect(() => {
     setProductsGlobal(products);
   }, []);
 
+  // For Future pagination requirements
+  // useEffect(() => {
+  //   async function getData() {
+  //     let products = await client.product.fetchAll(10);
+  //     let nextPage = await client.fetchNextPage(products);
+
+  //     nextPage = JSON.parse(JSON.stringify(nextPage));
+  //     products = JSON.parse(JSON.stringify(products));
+  //     console.log("heyyyyyy");
+  //     console.log(nextPage);
+  //     console.log("heyyyyyy");
+  //   }
+  //   getData();
+  // }, []);
+
   // console.log(products);
+  // console.log(nextPage);
+
   return (
     <main className="shop font-montserrat  ">
       <Container>
@@ -43,6 +60,11 @@ function Shop({ products }) {
             </>
           )}
         </div>
+        <div className="flex justify-center py-4">
+          <button className="bg-darknight py-2 px-3 text-center mx-auto">
+            Load More
+          </button>
+        </div>
       </Container>
     </main>
   );
@@ -52,11 +74,12 @@ export default Shop;
 
 export async function getStaticProps(context) {
   let products = await client.product.fetchQuery({first:80});
-  console.log('JSON.stringify(products)')
-  console.log(JSON.stringify(products))
+  // let products = await client.product.fetchAll(10);
+  let nextPage = await client.fetchNextPage(products);
   let infos = await client.shop.fetchInfo(); // Fetch shop Info if you think about SEO and title and ... to your page
   let policies = await client.shop.fetchPolicies(); // fetch shop policy if you have any
 
+  nextPage = JSON.parse(JSON.stringify(nextPage));
   products = JSON.parse(JSON.stringify(products));
   infos = JSON.parse(JSON.stringify(infos));
   policies = JSON.parse(JSON.stringify(policies));
@@ -64,6 +87,7 @@ export async function getStaticProps(context) {
   return {
     props: {
       products,
+      nextPage,
       infos,
       policies,
     }, // will be passed to the page component as props
