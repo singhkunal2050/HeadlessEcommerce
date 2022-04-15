@@ -5,6 +5,7 @@ import { AiFillGoogleCircle } from "react-icons/ai";
 import { IoMdEye, IoMdEyeOff } from "react-icons/io";
 import { UserContext } from "../context/userContext";
 import { useRouter } from "next/router";
+import Toast from "./Toast";
 
 function Login({ updateComponent }) {
   const [email, setemail] = useState("");
@@ -13,6 +14,7 @@ function Login({ updateComponent }) {
   const [loading, setloading] = useState(false);
   const { user , setUser } = useContext(UserContext);
   const router = useRouter()
+  const [message, setmessage] = useState('')
 
   function togglePasswordVisibility(e) {
     // console.log(passwordVisibility)
@@ -61,12 +63,18 @@ function Login({ updateComponent }) {
 
       const response = await rawResponse.json();
       if (response.success) {
-        console.log(response.user)
         setUser({...response.user , token :response.token });
         sessionStorage.user = JSON.stringify({...response.user , token :response.token });
-        router.push('/profile')
+        setmessage({type:'success' , content:'Logged In Successfully😁' })
+        setTimeout(()=>{
+          setmessage('')
+          router.push('/profile')
+        },2000)
       } else {
-        alert(response.err.message);
+        setmessage({type:'error' , content:response.err.message})
+        setTimeout(()=>{
+          setmessage('')
+        },2000)
       }
     }
     setloading(false);
@@ -77,6 +85,8 @@ function Login({ updateComponent }) {
   return (
     <section className="py-8 min-h-[80vh]">
       <Container>
+        {message && <Toast message={message.content} type={message.type} />}
+
         <h4 className="text-4xl  font-extrabold text-center p-6 ">Login</h4>
         <form onSubmit={handlSubmit} className="max-w-md mx-auto">
           <div className="mb-6">
