@@ -3,6 +3,7 @@ import { client } from "../utils/ShopifyClient";
 import { useContext, useEffect, useState } from "react";
 import { ProductContext } from "../context/productsContext";
 import Container from "../components/Container";
+import Head from "next/head";
 
 function Shop({ products, nextPage }) {
   const { productsGlobal, setProductsGlobal } = useContext(ProductContext);
