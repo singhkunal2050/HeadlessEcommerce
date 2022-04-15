@@ -3,13 +3,15 @@ import Container from "./Container";
 import { AiFillGoogleCircle } from "react-icons/ai";
 import { useState } from "react";
 import { IoMdEye, IoMdEyeOff } from "react-icons/io";
-
+import Toast from "./Toast";
+  
 function Signup({ updateComponent }) {
   const [name, setname] = useState("");
   const [email, setemail] = useState("");
   const [password, setpassword] = useState("");
   const [passwordVisibility, setPasswordVisibility] = useState(false);
   const [loading, setloading] = useState(false);
+  const [message, setmessage] = useState('')
 
   function togglePasswordVisibility(e) {
     console.log(passwordVisibility);
@@ -56,9 +58,18 @@ function Signup({ updateComponent }) {
       });
       const response = await rawResponse.json();
       if (response.success) {
-        alert("Registered Successfully");
+        setmessage({type:'success' , content:'Registered Successfully😁' })
+        setTimeout(()=>{
+          setmessage('')
+          updateComponent("login")
+        },2000)
+        // alert("Registered Successfully");
       } else {
-        alert(response.err.message.split(":")[2]);
+        setmessage({type:'error' , content:response.err.message.split(":")[2]})
+        setTimeout(()=>{
+          setmessage('')
+        },2000)
+        // alert(response.err.message.split(":")[2]);
       }
     }
 
@@ -71,6 +82,9 @@ function Signup({ updateComponent }) {
   return (
     <section className="py-8">
       <Container>
+
+        {message && <Toast message={message.content} type={message.type} />}
+
         <h4 className="text-4xl  font-extrabold text-center p-6 ">Signup</h4>
         <form className="max-w-md mx-auto" onSubmit={handlSubmit}>
           <div className="mb-6">

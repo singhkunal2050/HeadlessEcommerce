@@ -1,7 +1,6 @@
 import { useState } from "react";
 import Login from "../components/Login";
 import Signup from "../components/Signup";
-import Toast from "../components/Toast";
 
 function LoginSignup() {
   const [page, setPage] = useState("login");
@@ -16,8 +15,6 @@ function LoginSignup() {
   }
 
   return <section className="font-montserrat">
-    {/* <Toast message="Successfully Logged In" type="success" />
-    <Toast message="Failed Log In" type="error" /> */}
     {page === "login" ? <Login updateComponent={updateComponent}/> : <Signup updateComponent={updateComponent}/>}
   </section> 
 }
