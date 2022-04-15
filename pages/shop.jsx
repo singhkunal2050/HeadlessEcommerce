@@ -7,9 +7,7 @@ import Container from "../components/Container";
 function Shop({ products }) {
   const { productsGlobal, setProductsGlobal } = useContext(ProductContext);
   const [search, setsearch] = useState();
-
   console.log(products)
-
   useEffect(() => {
     setProductsGlobal(products);
   }, []);
@@ -52,8 +50,7 @@ function Shop({ products }) {
 export default Shop;
 
 export async function getStaticProps(context) {
-  //   console.log(context)
-  let products = await client.product.fetchQuery({ first: 250, query: "available_for_sale:true" })
+  let products = await client.product.fetchQuery({limit:40});
   console.log('JSON.stringify(products)')
   console.log(JSON.stringify(products))
   let infos = await client.shop.fetchInfo(); // Fetch shop Info if you think about SEO and title and ... to your page
