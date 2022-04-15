@@ -1,7 +1,8 @@
 import Link from "next/link";
 import { CartContext } from "../context/cartContext";
 import { useContext, useState, useEffect } from "react";
-import { FiShoppingCart, FiHeadphones, FiMenu } from "react-icons/fi";
+import { FiShoppingCart, FiMenu } from "react-icons/fi";
+import { SiApacherocketmq } from "react-icons/si"
 import { CgClose } from "react-icons/cg";
 import UserAvatar from "./UserAvatar";
 import { UserContext } from "../context/userContext";
@@ -34,8 +35,8 @@ function Navbar() {
             <div className="navbar-logo text-xl font-bold ">
               <Link href="/">
                 <a className="flex items-center gap-2">
-                  <FiHeadphones />
-                  <h2>Ecommerce</h2>
+                  <SiApacherocketmq />
+                  <h2>Hcommerce</h2>
                 </a>
               </Link>
             </div>
