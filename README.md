@@ -13,7 +13,7 @@ Headless Ecommerce Application built using Nextjs and Shopify Storefront API.
 ![JWT](https://img.shields.io/badge/JWT-black?style=for-the-badge&logo=JSON%20web%20tokens)
 ![Shopify](https://img.shields.io/badge/Shopify-%234DC730.svg?style=for-the-badge&logo=Shopify&logoColor=white)
 ![MongoDB](https://img.shields.io/badge/MongoDB-%234ea94b.svg?style=for-the-badge&logo=mongodb&logoColor=white)
-
+![Figma](https://img.shields.io/badge/figma-%23F24E1E.svg?style=for-the-badge&logo=figma&logoColor=white)
 
 ![Website Snap ](/public/Hcommerce.png)
 ![Shop Snap ](/public/shop.png)
