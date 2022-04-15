@@ -60,7 +60,7 @@ function Product({ key, product }) {
 export default Product;
 
 export async function getStaticPaths(productSlug) {
-  let products = await client.product.fetchAll();
+  let products = await client.product.fetchQuery({first:80});
   products = JSON.parse(JSON.stringify(products));
 
   let paths = products.map((product) => {
