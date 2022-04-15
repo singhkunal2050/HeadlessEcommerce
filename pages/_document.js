@@ -20,8 +20,9 @@ class MyDocument extends Document {
           <link
             href="https://fonts.googleapis.com/css2?family=Fira+Sans&display=swap" rel="stylesheet"
           />
+          <meta name="description" content="Headless Commerce App." />
 
-          <link rel="icon" href="/public/headless.png" />
+          <link rel="icon" href="//source.unsplash.com/30x30" /> 
         </Head>
         <body className="dark:bg-gray-800 dark:text-purple-50">
           <Main />

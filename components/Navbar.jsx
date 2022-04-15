@@ -6,6 +6,7 @@ import { CgClose } from "react-icons/cg";
 import UserAvatar from "./UserAvatar";
 import { UserContext } from "../context/userContext";
 import ToggleTheme from "./ToggleTheme";
+import Head from "next/head";
 
 function Navbar() {
   const { cart, cartVisibility, setCartVisibility } = useContext(CartContext);
