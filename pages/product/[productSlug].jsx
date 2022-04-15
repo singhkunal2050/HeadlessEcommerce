@@ -8,14 +8,14 @@ import { HiArrowSmRight } from "react-icons/hi"
 function Product({ key, product }) {
   // console.log(product)
   return (
-    <main>
+    <main className="font-montserrat">
       <Container>
-        <div className="pt-6">
+        <div className="pt-6 font-montserrat">
           <p className="flex gap-2 items-center text-2xl">
             <Link href={`/shop`}>
               <a className="hover:underline">Shop</a> 
             </Link>
-            <HiArrowSmRight/>
+            <HiArrowSmRight />
             <Link href={`/product/${product.handle}`}>
               <a className="hover:underline" >{product.title}</a>
             </Link>
@@ -23,7 +23,7 @@ function Product({ key, product }) {
         </div>
         <section
           data-id={key}
-          className="grid grid-cols-1 md:grid-cols-2 gap-2 py-8"
+          className="grid grid-cols-1 md:grid-cols-2 gap-2 py-8 font-montserrat"
         >
           <div className="product-images md:p-4">
             {product.images.map((img) => {
