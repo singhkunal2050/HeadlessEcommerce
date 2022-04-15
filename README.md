@@ -14,6 +14,7 @@ Headless Ecommerce Application built using Nextjs and Shopify Storefront API.
 
 
 ![Website Snap ](/public/Hcommerce.png)
+![Shop Snap ](/public/shop.png)
 
 - Todos
 - Dark Mode
