@@ -22,7 +22,7 @@ class MyDocument extends Document {
           />
           <meta name="description" content="Headless Commerce App." />
 
-          <link rel="icon" href="//source.unsplash.com/30x30" /> 
+          <link rel="icon" href="/headless.png" /> 
         </Head>
         <body className="dark:bg-gray-800 dark:text-purple-50">
           <Main />
