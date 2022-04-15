@@ -65,11 +65,13 @@ function Shop({ products, nextPage }) {
               </>
             )}
           </div>
-          <div className="flex justify-center py-4">
+          
+          {/* <div className="flex justify-center py-4">
             <button className="bg-darknight py-2 px-3 text-center mx-auto">
               Load More
             </button>
-          </div>
+          </div> */}
+
         </Container>
       </main>
     </>
