@@ -11,7 +11,7 @@ function Shop({ products, nextPage }) {
 
   useEffect(() => {
     setProductsGlobal(products);
-    console.log(products)
+    // console.log(products)
   }, []);
 
   // For Future pagination requirements
@@ -62,7 +62,7 @@ function Shop({ products, nextPage }) {
                   )
                   .map((product) => {
                     return <ProductSingle key={product.id} product={product} />;
-                  }) : <p className="text-center mb-6">No Products Found</p>  }
+                  }) : <p className="text-center mb-6">No Products Found! Please check your Connection.</p>  }
               </>
             )}
           </div>
