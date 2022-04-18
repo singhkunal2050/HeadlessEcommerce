@@ -1,6 +1,6 @@
 [![Hcommerce](https://img.shields.io/website?label=HCommerce&style=for-the-badge&url=https://hcommerce.vercel.app/)](https://hcommerce.vercel.app/)
 
-### Shopify Headless Nextjs
+### Headless Ecommerce with Nextjs
 
 Headless Ecommerce Application built using Nextjs and Shopify Storefront API. 
 
