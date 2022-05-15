@@ -4,6 +4,7 @@
 
 Headless Ecommerce Application built using Nextjs and Shopify Storefront API. 
 
+Headless commerce is an e-commerce architecture where the front-end is decoupled from the back-end commerce functionality and can thus be updated or edited without interfering with the back-end, similar to a headless content management system
 
 ![NodeJS](https://img.shields.io/badge/node.js-6DA55F?style=for-the-badge&logo=node.js&logoColor=white)
 ![React](https://img.shields.io/badge/react-%2320232a.svg?style=for-the-badge&logo=react&logoColor=%2361DAFB)
